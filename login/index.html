@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <form class="form borderColor">
+        <h1 class="heading">Login</h1>
+
+        <input type="email" id="email" class="input" placeholder="Email"><br><br>
+        
+        <input type="password" id="password" class="input" placeholder="Password"><br><br>
+        
+        <p id="forgotPassword">Forgot password</p>
+
+        <small id="warning" style="color: rgb(216, 97, 97);"></small><br><br>
+
+        <button type="submit" id="login_btn" class="btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="logintext">Login</span></button><br><br>
+        
+        <small>Don't have an account please<a href="../signup/index.html"> signup</a></small>
+        
+        <hr style="width: 70%;"><br>
+
+        <span id="loginWithGoogle" class="borderColor">Login with google</span>
+
+    </form>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="../firebase.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

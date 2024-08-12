@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="navbar borderColor">
+        <span id="navigateDashboard" class="navlink">Dashboard</span>
+        <span id="navigateAssignment" class="navlink">Assignments</span>
+        <span id="logout" class="btn">LogOut</span>
+    </div>
+
+    <h1 class="heading1" id="heading">Welcome to your Dashboard!</h1>
+
+    <div class="assignmentsDashboard" id="assignmentsDashboard">
+        <div class="assignmentForm borderColor" id="assignmentForm">
+            <span class="fa fa-user"></span> <input type="text" placeholder="Enter your name" class="input mt"><br><br>
+            <span class="fa fa-external-link"></span> <input type="url" placeholder="Enter assignment link" class="input"><br><br>
+            <button id="assignmentSubmit" class="btn">Submit</button>
+        </div>
+        <div class="addLogo" id="addLogo" title="Add Assignment"><i class="fa fa-plus"></i></div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="../firebase.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

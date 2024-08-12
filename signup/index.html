@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <form class="form borderColor">
+        <h1 class="heading">Signup</h1>
+        <input type="email" id="email" id="userEmail" class="input" placeholder="Enter email address"><br><br>
+        
+        <input type="password" id="password" id="userPassword" class="input" placeholder="Create a strong password"><br><br>
+        
+        <small id="warning" style="color: rgb(216, 97, 97);"></small><br><br>
+
+        <button type="submit" id="signup_btn" class="btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="signuptext">Signup</span></button><br><br>
+        
+        <small>Do you have already account, please <a href="../login/index.html">login</a></small>
+    </form>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="../firebase.js"></script>
+    <script type="module" src="signup.js"></script>
+</body>
+</html>
