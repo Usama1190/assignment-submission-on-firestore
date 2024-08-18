@@ -15,6 +15,8 @@ let assignmentForm = document.getElementById('assignmentForm');
 
 let assignmentSubmit = document.getElementById('assignmentSubmit');
 
+let assignmentList = document.getElementById('assignmentList');
+
 assignmentForm.style.display = 'none';
 
 const Logout = () => {
@@ -60,8 +62,17 @@ navigateDashboard.addEventListener('click', function() {
 
 addLogo.addEventListener('click', function() {
     assignmentForm.style.display = 'block';
+    assignmentList.style.display = 'none';
 });
 
 assignmentSubmit.addEventListener('click', function() {
     assignmentForm.style.display = 'none';
-})
+    assignmentList.style.display = 'block';
+
+    let newAssignment = document.createElement('div');
+    let newAssignmentContent = document.createTextNode('Hello, I"m New!');
+
+    newAssignment.appendChild(newAssignmentContent);
+    newAssignment.classList.add('newAssignment');
+    assignmentList.appendChild(newAssignment);
+});
