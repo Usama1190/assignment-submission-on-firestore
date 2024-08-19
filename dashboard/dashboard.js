@@ -1,4 +1,4 @@
-import {db, collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
+import {db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
 
 let logout = document.getElementById('logout');
 let assignmentsDashboard = document.getElementById('assignmentsDashboard');
@@ -18,9 +18,14 @@ let assignmentForm = document.getElementById('assignmentForm');
 
 let assignmentSubmit = document.getElementById('assignmentSubmit');
 
-let assignmentList = document.getElementById('assignmentList');
+let showData = document.getElementById('showData');
 
 assignmentForm.style.display = 'none';
+
+let loader = document.getElementById('loader');
+let submittext = document.getElementById('submittext');
+
+loader.style.display = 'none';
 
 const Logout = () => {
     signOut(auth).then(() => {
@@ -69,28 +74,48 @@ addLogo.addEventListener('click', function() {
 });
 
 const addAssignment = async() => {
-    assignmentForm.style.display = 'none';
-    assignmentList.style.display = 'block';
-    
-    let newAssignment = document.createElement('div');
-    let newAssignmentContent = document.createTextNode(`${student_name.value}, and ${assignment_link.value}`);
-    
-
     if(student_name.value !== '' && assignment_link !== '') {
-        newAssignment.appendChild(newAssignmentContent);
-        newAssignment.classList.add('newAssignment');
-        assignmentList.appendChild(newAssignment);
-
         try {
+            loader.style.display = 'block';
+            submittext.innerText = '';
+            
             const docRef = await addDoc(collection(db, "assignments"), {
               student_name: student_name.value,
               assignment_link: assignment_link.value,
             });
             console.log("Document written with ID: ", docRef.id);
         } catch (e) {
+            loader.style.display = 'none';
+            submittext.innerText = 'Submit';
+
             console.error("Error adding document: ", e);
+        }
+        finally {
+            loader.style.display = 'none';
+            submittext.innerText = 'Submit';
+
+            assignmentForm.style.display = 'none';
+            assignmentList.style.display = 'block';
+
+            student_name.value = '';
+            assignment_link.value = '';
         }
     }
 }
 
-assignmentSubmit.addEventListener('click', addAssignment)
+assignmentSubmit.addEventListener('click', addAssignment);
+
+
+const getAssignments = async() => {
+    const querySnapshot = await getDocs(collection(db, "assignments"));
+    querySnapshot.forEach((doc) => {
+        const { student_name, assignment_link } = doc.data();
+
+        showData.innerHTML += `<strong>${student_name}</strong><br /><p>${assignment_link}</p>`;
+        console.log(student_name, assignment_link);
+        
+        // console.log(`${doc.id} => ${doc.data()}`);
+    });
+}
+
+getAssignments();
