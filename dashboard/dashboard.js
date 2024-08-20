@@ -11,6 +11,8 @@ let assignment_link = document.getElementById('assignment_link');
 
 let navigateDashboard = document.getElementById('navigateDashboard');
 
+let assignmentList = document.getElementById('assignmentList');
+
 assignmentsDashboard.style.display = 'none';
 
 let addLogo = document.getElementById('addLogo');
@@ -111,7 +113,7 @@ const getAssignments = async() => {
     querySnapshot.forEach((doc) => {
         const { student_name, assignment_link } = doc.data();
 
-        showData.innerHTML += `<strong>${student_name}</strong><br /><p>${assignment_link}</p>`;
+        showData.innerHTML += `<strong>${student_name}</strong><br /><a href=${assignment_link} target='_blank'>${assignment_link}</a><br /><br />`;
         console.log(student_name, assignment_link);
         
         // console.log(`${doc.id} => ${doc.data()}`);
