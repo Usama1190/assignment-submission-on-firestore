@@ -21,12 +21,15 @@
     <div class="assignmentsDashboard" id="assignmentsDashboard">
         <div class="assignmentForm borderColor" id="assignmentForm">
             <span class="fa fa-user"></span> <input type="text" id="student_name" placeholder="Enter your name" class="input mt"><br><br>
-            <span class="fa fa-external-link"></span> <input type="url" id="assignment_link" placeholder="Enter assignment link" class="input"><br><br>
+            <span class="fa fa-external-link"></span> <input type="url" id="assignment_link" placeholder="Enter assignment link" class="input"><br>
+            <small id="warning" style="color: rgb(235, 78, 78);"></small><br><br>
             <button id="assignmentSubmit" class="btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="submittext">Submit</span></button>
         </div>
         <div class="addLogo" id="addLogo" title="Add Assignment"><i class="fa fa-plus"></i></div>
 
         <div class="assignmentList" id="assignmentList">
+            <h2>Your Assignments</h2>
+            <div style="border: 1px solid black;"><i class="fa fa-spinner fa-spin" style="font-size: 50px;" id="dataLoader"></i></div>
             <div id="showData"></div>
         </div>
     </div>

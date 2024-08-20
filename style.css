@@ -138,8 +138,13 @@ body {
 
 
 
+.assignmentsDashboard {
+    border: 1px solid black;
+}
+
 .assignmentList {
     margin-top: 140px;
+    border: 1px solid black;
 }
 
 

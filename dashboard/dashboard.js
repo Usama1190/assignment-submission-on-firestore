@@ -27,6 +27,12 @@ assignmentForm.style.display = 'none';
 let loader = document.getElementById('loader');
 let submittext = document.getElementById('submittext');
 
+let warning = document.getElementById('warning');
+
+let dataLoader = document.getElementById('dataLoader');
+
+// dataLoader.style.display = 'none';
+
 loader.style.display = 'none';
 
 const Logout = () => {
@@ -77,6 +83,7 @@ addLogo.addEventListener('click', function() {
 
 const addAssignment = async() => {
     if(student_name.value !== '' && assignment_link !== '') {
+        warning.innerText = '';
         try {
             loader.style.display = 'block';
             submittext.innerText = '';
@@ -86,6 +93,8 @@ const addAssignment = async() => {
               assignment_link: assignment_link.value,
             });
             console.log("Document written with ID: ", docRef.id);
+            getAssignments();
+
         } catch (e) {
             loader.style.display = 'none';
             submittext.innerText = 'Submit';
@@ -103,21 +112,36 @@ const addAssignment = async() => {
             assignment_link.value = '';
         }
     }
+    else {
+        warning.innerText = 'Invalid input fields';
+    }
 }
 
 assignmentSubmit.addEventListener('click', addAssignment);
 
 
 const getAssignments = async() => {
-    const querySnapshot = await getDocs(collection(db, "assignments"));
-    querySnapshot.forEach((doc) => {
-        const { student_name, assignment_link } = doc.data();
+    dataLoader.style.display = 'block';
 
-        showData.innerHTML += `<strong>${student_name}</strong><br /><a href=${assignment_link} target='_blank'>${assignment_link}</a><br /><br />`;
-        console.log(student_name, assignment_link);
+    try {
+        const querySnapshot = await getDocs(collection(db, "assignments"));
+        querySnapshot.forEach((doc) => {
+            const { student_name, assignment_link } = doc.data();
+
+            showData.innerHTML += `<span class="fa fa-user"></span> <strong>${student_name}</strong><br /><br /><span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank'>${assignment_link}</a><br /><br /><br />`;
+            console.log(student_name, assignment_link);
         
-        // console.log(`${doc.id} => ${doc.data()}`);
-    });
+            // console.log(`${doc.id} => ${doc.data()}`);
+        });
+    } catch (error) {
+        console.log(error);
+        // dataLoader.style.display = 'none';
+        
+    }
+    finally {
+        // dataLoader.style.display = 'none';
+
+    }
 }
 
 getAssignments();
