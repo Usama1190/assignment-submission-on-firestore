@@ -5,6 +5,9 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
+    /* background-image: url(assets/dbimage1.webp); */
+    /* background-repeat: no-repeat; */
+    /* background-size: 100%; */
 }
 
 .form {
@@ -104,9 +107,9 @@ body {
 }
 
 .addLogo {
-    position: absolute;
-    right: 100px;
-    bottom: 200px;
+    /* position: absolute; */
+    /* right: 100px; */
+    /* bottom: 200px; */
     cursor: pointer;
     display: flex;
     padding: 10px;
@@ -140,6 +143,7 @@ body {
 
 .assignmentsDashboard {
     border: 1px solid black;
+    width: 80%;
 }
 
 .assignmentList {

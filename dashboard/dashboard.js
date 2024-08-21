@@ -31,7 +31,7 @@ let warning = document.getElementById('warning');
 
 let dataLoader = document.getElementById('dataLoader');
 
-// dataLoader.style.display = 'none';
+dataLoader.style.display = 'none';
 
 loader.style.display = 'none';
 
@@ -121,7 +121,7 @@ assignmentSubmit.addEventListener('click', addAssignment);
 
 
 const getAssignments = async() => {
-    dataLoader.style.display = 'block';
+    // dataLoader.style.display = 'block';
 
     try {
         const querySnapshot = await getDocs(collection(db, "assignments"));
@@ -135,11 +135,11 @@ const getAssignments = async() => {
         });
     } catch (error) {
         console.log(error);
-        // dataLoader.style.display = 'none';
+        dataLoader.style.display = 'none';
         
     }
     finally {
-        // dataLoader.style.display = 'none';
+        dataLoader.style.display = 'none';
 
     }
 }
