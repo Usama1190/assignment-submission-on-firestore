@@ -55,13 +55,16 @@ body {
     text-decoration: underline;
     cursor: pointer;
     color: purple;
+    opacity: 0.7;
     margin-top: -8px;
-    margin-left: -98px;
+    /* margin-left: -98px; */
 }
 
 .btn {
     padding: 12px;
     width: 100%;
+    font-weight: 900;
+    opacity: 0.7;
     cursor: pointer;
     border-radius: 6px;
     border: 1px solid rgb(238, 236, 236);
