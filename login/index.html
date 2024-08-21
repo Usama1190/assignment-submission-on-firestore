@@ -10,25 +10,29 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <div class="side_div">
+        new div
+    </div>
+    
     <div class="form_container">
-        <form class="form borderColor">
-        <h1 class="heading">Login</h1>
+        <form class="form">
+            <h1 class="heading">Login</h1>
 
-        <input type="email" id="email" class="input" placeholder="Email"><br><br>
-        
-        <input type="password" id="password" class="input" placeholder="Password"><br><br>
-        
-        <p id="forgotPassword">Forgot password</p>
+            <input type="email" id="email" class="input" placeholder="Email"><br><br>
+            
+            <input type="password" id="password" class="input" placeholder="Password"><br><br>
+            
+            <p id="forgotPassword">Forgot password</p>
 
-        <small id="warning" style="color: rgb(216, 97, 97);"></small><br><br>
+            <small id="warning" style="color: rgb(216, 97, 97);"></small><br><br>
 
-        <button type="submit" id="login_btn" class="btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="logintext">Login</span></button><br><br>
-        
-        <small>Don't have an account please<a href="../signup/index.html"> signup</a></small>
-        
-        <hr style="width: 70%;"><br>
+            <button type="submit" id="login_btn" class="btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="logintext">Login</span></button><br><br>
+            
+            <small class="or">Don't have an account, please <a href="../signup/index.html"> signup</a></small><br>
+            
+            <span class="or">or</span><br>
 
-        <span id="loginWithGoogle" class="borderColor">Login with google</span>
+            <span id="loginWithGoogle" class="borderColor or"><img src="../assets/Google_Icons-09-512.webp" alt="google" style="width: 40px; height: 40px;">Login with google</span>
 
         </form>
     </div>
