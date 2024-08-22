@@ -10,29 +10,31 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="navbar borderColor">
-        <span id="navigateDashboard" class="navlink">Dashboard</span>
-        <span id="navigateAssignment" class="navlink">Assignments</span>
-        <span id="logout" class="btn">LogOut</span>
-    </div>
-
-    <h1 class="heading1" id="heading">Welcome to your Dashboard!</h1>
-
-    <div class="assignmentsDashboard" id="assignmentsDashboard">
-        <div class="assignmentForm borderColor" id="assignmentForm">
-            <span class="fa fa-user"></span> <input type="text" id="student_name" placeholder="Enter your name" class="input mt"><br><br>
-            <span class="fa fa-external-link"></span> <input type="url" id="assignment_link" placeholder="Enter assignment link" class="input"><br>
-            <small id="warning" style="color: rgb(235, 78, 78);"></small><br><br>
-            <button id="assignmentSubmit" class="btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="submittext">Submit</span></button>
+    <div class="dashboard_wrapper">
+        <div class="navbar borderColor">
+            <span id="navigateDashboard" class="navlink navlink_active">Dashboard</span>
+            <span id="navigateAssignment" class="navlink">Assignments</span>
+            <span id="logout" class="dashboard_logout_btn">LogOut <i class="fa fa-sign-out"></i></span>
         </div>
-        <!-- <div class="addLogo" id="addLogo" title="Add Assignment"><i class="fa fa-plus"></i></div> -->
 
-        <div class="assignmentList" id="assignmentList">
-            <span style="font-size: 35px;"><strong>Your Assignments</strong></span>
-            <button class="btn" id="addLogo" type="button" style="float: right;">Add assignment</button>
+        <h1 class="dashboard_main_heading" id="heading">Welcome to your Dashboard!</h1>
 
-            <div style="border: 1px solid black;"><i class="fa fa-spinner fa-spin" style="font-size: 50px;" id="dataLoader"></i></div>
-            <div id="showData"></div>
+        <div class="assignmentsDashboard" id="assignmentsDashboard">
+            <div class="assignmentForm borderColor" id="assignmentForm">
+                <span class="fa fa-user"></span> <input type="text" id="student_name" placeholder="Enter your name" class="input mt"><br><br>
+                <span class="fa fa-external-link"></span> <input type="url" id="assignment_link" placeholder="Enter assignment link" class="input"><br>
+                <small id="warning" style="color: rgb(235, 78, 78);"></small><br><br>
+                <button id="assignmentSubmit" class="dashboard_logout_btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="submittext">Submit</span></button>
+            </div>
+            <!-- <div class="addLogo" id="addLogo" title="Add Assignment"><i class="fa fa-plus"></i></div> -->
+
+            <div class="assignmentList" id="assignmentList">
+                <span style="font-size: 35px;"><strong>Your Assignments</strong></span>
+                <button class="dashboard_logout_btn" id="addLogo" type="button" style="float: right;">Add assignment</button>
+
+                <div style="border: 1px solid black;"><i class="fa fa-spinner fa-spin" style="font-size: 50px;" id="dataLoader"></i></div>
+                <div id="showData"></div>
+            </div>
         </div>
     </div>
 

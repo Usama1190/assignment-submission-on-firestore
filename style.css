@@ -104,13 +104,6 @@ body {
     color: var(--color-text-1);
 }
 
-/* .heading {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-} */
-
-
 
 #loginWithGoogle {
     padding: 10px;
@@ -151,17 +144,16 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.icon:hover {
+    margin-left: 4px;
+}
+
 .firebase_logo {
     width: 8rem;
     height: 8rem;
 }
 
-.icon_edit {
-    font-size: 150px;
-}
-
-
-
+/* Login signup end */
 
 
 
@@ -173,8 +165,15 @@ body {
     margin-top: 30px;
 }
 
+.dashboard_wrapper {
+    width: 100%;
+    border: 1px solid black;
+}
+
 .navlink {
     cursor: pointer;
+    color: var(--color-text-1);
+    position: relative;
 }
 
 .navlink:hover {
@@ -182,10 +181,12 @@ body {
     opacity: 0.6;
 }
 
+.navlink_active {
+    text-decoration: underline;
+    opacity: 0.6;
+}
+
 .addLogo {
-    /* position: absolute; */
-    /* right: 100px; */
-    /* bottom: 200px; */
     cursor: pointer;
     display: flex;
     padding: 10px;
@@ -203,12 +204,31 @@ body {
     scale: 1.03;
 }
 
+.dashboard_logout_btn {
+    border: 1px solid var(--color-border-4);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px;
+    background-color: transparent;
+    color: var(--color-text-1);
+}
+
+.dashboard_logout_btn:hover {
+    opacity: 0.5;
+    scale: 1.03;
+}
+
+.dashboard_main_heading {
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
 .assignmentForm {
     text-align: center;
-    margin-top: 140px;
     border-radius: 4px;
-    width: 300px;
+    width: 400px;
     height: 250px;
+    margin: auto;
 }
 
 
@@ -219,11 +239,13 @@ body {
 
 .assignmentsDashboard {
     border: 1px solid black;
-    width: 80%;
+    width: 100%;
+    margin-top: 120px;
+    /* margin: auto; */
 }
 
 .assignmentList {
-    margin-top: 140px;
+    margin-top: 120px;
     border: 1px solid black;
 }
 
@@ -243,7 +265,7 @@ body {
     body {
         display: block;
     }
-    
+
     .form_container {
         width: 100%;
     }
