@@ -104,6 +104,12 @@ body {
     color: var(--color-text-1);
 }
 
+/* .heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+} */
+
 
 
 #loginWithGoogle {
@@ -143,6 +149,11 @@ body {
 
 .side_div_inner_login:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.firebase_logo {
+    width: 8rem;
+    height: 8rem;
 }
 
 .icon_edit {

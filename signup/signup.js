@@ -1,22 +1,16 @@
 import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase.js";
 
 let formField = document.querySelectorAll('form input');
-const [ userEmail, userPassword ] = formField;
+const [userName, userEmail, userPassword ] = formField;
 
 let signup_btn = document.getElementById('signup_btn');
 let signuptext = document.getElementById('signuptext');
 let loader = document.getElementById('loader');
 loader.style.display = 'none';
 let confirmPasswrod = document.getElementById('confirmPasswrod');
+// let userName = document.getElementById('userName');
 
-console.log(confirmPasswrod);
-
-const [,,passwordUser] = formField;
-
-console.log(passwordUser);
-
-
-
+console.log(userName);
 
 
 
@@ -25,13 +19,11 @@ const signUp = () => {
     signuptext.innerText = '';
     loader.style.display = 'block';
 
-    console.log(confirmPasswrod.value, 'confirmPasswrod');
-    console.log(userPassword.value, 'userPassword');
-    
+    console.log(userName.value, 'userName');
     
 
-    if(passwordUser.value !== confirmPasswrod.value) {
-        warning.innerText = "Password doesn't match!";
+    if(userName.value.trim() === '' && userPassword.value !== confirmPasswrod.value) {
+        warning.innerText = "Input fields is not valid!";
         signuptext.innerText = 'Signup';
         loader.style.display = 'none';
     }
