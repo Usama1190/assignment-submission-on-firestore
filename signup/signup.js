@@ -22,12 +22,7 @@ const signUp = () => {
     console.log(userName.value, 'userName');
     
 
-    if(userName.value.trim() === '' && userPassword.value !== confirmPasswrod.value) {
-        warning.innerText = "Input fields is not valid!";
-        signuptext.innerText = 'Signup';
-        loader.style.display = 'none';
-    }
-    else {
+    if(userName.value !== '' && userPassword.value === confirmPasswrod.value) {
         createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
         .then((userCredential) => {
             signuptext.innerText = 'Signup';
@@ -60,6 +55,11 @@ const signUp = () => {
             
             // ..
         });
+    }
+    else {
+        warning.innerText = "Input fields is not valid!";
+        signuptext.innerText = 'Signup';
+        loader.style.display = 'none';
     }
 }
 
