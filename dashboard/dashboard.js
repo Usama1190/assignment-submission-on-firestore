@@ -35,6 +35,10 @@ dataLoader.style.display = 'none';
 
 loader.style.display = 'none';
 
+const appPages = {
+    dashboard_front_page: document.getElementById('dashboard_front_page')
+}
+
 const Logout = () => {
     signOut(auth).then(() => {
         // Sign-out successful.

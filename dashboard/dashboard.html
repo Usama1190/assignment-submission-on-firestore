@@ -11,20 +11,20 @@
 </head>
 <body>
     <div class="dashboard_wrapper">
-        <div class="dashboard_front_page" id="dashboard_front_page">
-            <div class="navbar borderColor">
-                <span id="navigateDashboard" class="navlink navlink_active">Dashboard</span>
-                <span id="navigateAssignment" class="navlink">Assignments</span>
-                <span id="logout" class="dashboard_logout_btn">LogOut <i class="fa fa-sign-out"></i></span>
-            </div>
-            <h1 class="dashboard_main_heading">Welcome to your Dashboard!</h1>
-            <div class="img_wrapper">
-                <img src="../assets/dashboardimage.gif" alt="Student with laptop" class="dashboard_front_page_img">
-            </div>
+        <div class="navbar borderColor">
+            <span id="navigateDashboard" class="navlink navlink_active">Dashboard</span>
+            <span id="navigateAssignment" class="navlink">Assignments</span>
+            <span id="logout" class="dashboard_logout_btn">LogOut <i class="fa fa-sign-out"></i></span>
         </div>
 
+        <div id="dashboard_front_page">
+            <h1 class="dashboard_main_heading">Welcome to your Dashboard!</h1>
+            <!-- <div class="img_wrapper">
+                <img src="../assets/dashboardimage.gif" alt="Student with laptop" class="dashboard_front_page_img">
+            </div> -->
+        </div>
 
-        <div class="assignmentsDashboard" id="assignmentsDashboard">
+        <div id="assignmentsDashboard">
             <div class="assignmentForm borderColor" id="assignmentForm">
                 <span class="fa fa-user"></span> <input type="text" id="student_name" placeholder="Enter your name" class="input mt"><br><br>
                 <span class="fa fa-external-link"></span> <input type="url" id="assignment_link" placeholder="Enter assignment link" class="input"><br>
