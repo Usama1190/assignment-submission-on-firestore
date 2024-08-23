@@ -18,10 +18,13 @@
         </div>
 
         <div id="dashboard_front_page">
-            <h1 class="dashboard_main_heading">Welcome to your Dashboard!</h1>
-            <!-- <div class="img_wrapper">
+            <div class="content_wrapper">
+                <h1 class="dashboard_main_heading">Welcome to your Dashboard!</h1>
+            </div>
+
+            <div class="img_wrapper">
                 <img src="../assets/dashboardimage.gif" alt="Student with laptop" class="dashboard_front_page_img">
-            </div> -->
+            </div>
         </div>
 
         <div id="assignmentsDashboard">
@@ -31,14 +34,16 @@
                 <small id="warning" style="color: rgb(235, 78, 78);"></small><br><br>
                 <button id="assignmentSubmit" class="dashboard_logout_btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="submittext">Submit</span></button>
             </div>
-            <!-- <div class="addLogo" id="addLogo" title="Add Assignment"><i class="fa fa-plus"></i></div> -->
 
-            <div class="assignmentList" id="assignmentList">
-                <span style="font-size: 35px;"><strong>Your Assignments</strong></span>
-                <button class="dashboard_logout_btn" id="addLogo" type="button" style="float: right;">Add assignment</button>
+            <div id="assignmentList">
+                <div class="assignment_content">
+                    <span style="font-size: 35px;"><strong>Your Assignments</strong></span>
+                    <button class="dashboard_logout_btn" id="addLogo" type="button" style="float: right;">Add assignment</button>
 
-                <div style="border: 1px solid black;"><i class="fa fa-spinner fa-spin" style="font-size: 50px;" id="dataLoader"></i></div>
-                <div id="showData"></div>
+                    <div style="border: 1px solid black;"><i class="fa fa-spinner fa-spin" style="font-size: 50px;" id="dataLoader"></i></div>
+                    <div id="showData"></div>
+                </div>
+                <div class="assignment_sidebar"></div>
             </div>
         </div>
     </div>

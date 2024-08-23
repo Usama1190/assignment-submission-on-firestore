@@ -35,9 +35,8 @@ dataLoader.style.display = 'none';
 
 loader.style.display = 'none';
 
-const appPages = {
-    dashboard_front_page: document.getElementById('dashboard_front_page')
-}
+let dashboard_front_page = document.getElementById('dashboard_front_page')
+
 
 const Logout = () => {
     signOut(auth).then(() => {
@@ -70,12 +69,12 @@ onAuthStateChanged(auth, (user) => {
 });
 
 navigateAssignment.addEventListener('click', function() {
+    dashboard_front_page.style.display = 'none';
     assignmentsDashboard.style.display = 'block';
-    heading.style.display = 'none';
 });
 
 navigateDashboard.addEventListener('click', function() {
-    heading.style.display = 'block';
+    dashboard_front_page.style.display = 'block';
     assignmentsDashboard.style.display = 'none';
 });
 

@@ -171,15 +171,26 @@ body {
     background-color: var(--color-text-1);
 }
 
-.dashboard_front_page {
+#dashboard_front_page {
     width: 100%;
+    height: 99vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     border: 1px solid black;
     background-color: var(--color-text-1);
 }
 
-.dashboard_front_page_img {
+.content_wrapper {
     width: 30rem;
-    height: 30rem;
+    height: 20rem;
+    border: 1px solid black;
+}
+
+.dashboard_front_page_img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 25%;
 }
 
 
@@ -199,24 +210,6 @@ body {
     opacity: 0.6;
 }
 
-.addLogo {
-    cursor: pointer;
-    display: flex;
-    padding: 10px;
-    font-size: 24px;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    /* border: 1px solid black; */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.addLogo:hover {
-    scale: 1.03;
-}
-
 .dashboard_logout_btn {
     border: 1px solid var(--color-border-4);
     border-radius: 8px;
@@ -232,8 +225,8 @@ body {
 }
 
 .dashboard_main_heading {
-    margin-top: 100px;
-    margin-left: 20px;
+    color: var(--color-3);
+    font-size: 35px;
 }
 
 .assignmentForm {
@@ -259,12 +252,13 @@ body {
     /* margin: auto; */
 }
 
-.assignmentList {
-    margin-top: 120px;
-    width: 80%;
+#assignmentList {
+    width: 99%;
+    height: 99vh;
     border-radius: 10px;
-    padding: 20px;
-    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
 }
 
 
