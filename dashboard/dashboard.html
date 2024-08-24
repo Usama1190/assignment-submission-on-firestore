@@ -12,8 +12,8 @@
 <body>
     <div class="dashboard_wrapper">
         <div class="navbar borderColor">
-            <span id="navigateDashboard" class="navlink navlink_active">Dashboard</span>
-            <span id="navigateAssignment" class="navlink">Assignments</span>
+            <span id="navigateDashboard" class="navlink navlink_active">Dashboard <i class="fa fa-dashboard"></i></span>
+            <span id="navigateAssignment" class="navlink">Assignments <i class="fa fa-address-card"></i></span>
             <span id="logout" class="dashboard_logout_btn">LogOut <i class="fa fa-sign-out"></i></span>
         </div>
 
@@ -37,13 +37,23 @@
 
             <div id="assignmentList">
                 <div class="assignment_content">
-                    <span style="font-size: 35px;"><strong>Your Assignments</strong></span>
-                    <button class="dashboard_logout_btn" id="addLogo" type="button" style="float: right;">Add assignment</button>
+                    <div class="header_content">
+                        <span class="header_content_heading">Submitted Assignments</span>
+                        <div>
+                            <button class="dashboard_logout_btn" id="addLogo" type="button">Add assignment <i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
 
-                    <div style="border: 1px solid black;"><i class="fa fa-spinner fa-spin" style="font-size: 50px;" id="dataLoader"></i></div>
+                    <div><i class="fa fa-spinner fa-spin" style="font-size: 50px;" id="dataLoader"></i></div>
                     <div id="showData"></div>
                 </div>
-                <div class="assignment_sidebar">assignment_sidebar</div>
+                <div class="assignment_sidebar">
+                    <div class="user_avatar_container">
+                        <i class="fa fa-user-o user_avatar"></i>
+                    </div>
+
+                    <strong>Average Rating</strong>
+                </div>
             </div>
         </div>
     </div>
