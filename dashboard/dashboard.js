@@ -74,7 +74,7 @@ navigateAssignment.addEventListener('click', function() {
 });
 
 navigateDashboard.addEventListener('click', function() {
-    dashboard_front_page.style.display = 'block';
+    dashboard_front_page.style.display = 'flex';
     assignmentsDashboard.style.display = 'none';
 });
 
