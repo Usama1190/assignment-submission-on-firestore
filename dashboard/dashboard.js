@@ -84,7 +84,7 @@ navigateDashboard.addEventListener('click', function() {
 
 
 addLogo.addEventListener('click', function() {
-    assignment_form_wrapper.style.display = 'block';
+    assignment_form_wrapper.style.display = 'flex';
     assignmentList.style.display = 'none';
 });
 
@@ -112,8 +112,8 @@ const addAssignment = async() => {
             loader.style.display = 'none';
             submittext.innerText = 'Submit';
 
-            assignmentForm.style.display = 'none';
-            assignmentList.style.display = 'block';
+            assignment_form_wrapper.style.display = 'none';
+            assignmentList.style.display = 'flex';
 
             student_name.value = '';
             assignment_link.value = '';
@@ -129,14 +129,15 @@ assignmentSubmit.addEventListener('click', addAssignment);
 
 const getAssignments = async() => {
     // dataLoader.style.display = 'block';
-
+    
     try {
         const querySnapshot = await getDocs(collection(db, "assignments"));
+        showData.innerHTML = '';
         querySnapshot.forEach((doc) => {
             const { student_name, assignment_link } = doc.data();
-
+            
             showData.innerHTML += `<span class="fa fa-user"></span> <strong>${student_name}</strong><br /><br /><span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank'>${assignment_link}</a><br /><br /><br />`;
-            console.log(student_name, assignment_link);
+            // console.log(student_name, assignment_link);
         
             // console.log(`${doc.id} => ${doc.data()}`);
         });
