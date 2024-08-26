@@ -132,11 +132,15 @@ const getAssignments = async() => {
     
     try {
         const querySnapshot = await getDocs(collection(db, "assignments"));
-        showData.innerHTML = '';
+
+        if(querySnapshot.empty) {
+            showData.innerHTML += `<div class='singleData'>Students assignment is not available!</div>`;
+            
+        }
         querySnapshot.forEach((doc) => {
             const { student_name, assignment_link } = doc.data();
             
-            showData.innerHTML += `<span class="fa fa-user"></span> <strong>${student_name}</strong><br /><br /><span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank'>${assignment_link}</a><br /><br /><br />`;
+            showData.innerHTML += `<div class='singleData'><span class="fa fa-user"></span> <strong>${student_name}</strong><br /><br /><span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a></div>`;
             // console.log(student_name, assignment_link);
         
             // console.log(`${doc.id} => ${doc.data()}`);

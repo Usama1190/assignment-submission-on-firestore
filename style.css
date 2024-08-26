@@ -280,7 +280,7 @@ body {
 }
 
 .assignment_content {
-    margin-top: 400px;
+    /* margin-top: 400px; */
     border: 1px solid var(--color-border-4);
     width: 45rem;
     padding: 20px;
@@ -302,6 +302,25 @@ body {
 #showData {
     /* border: 1px solid yellow; */
     padding: 20px;
+}
+
+.singleData {
+    border: 1px solid var(--color-border-4);
+    padding: 12px;
+    border-radius: 10px;
+    background-color: var(--color-2);
+    transition: all 0.3s;
+    color: var(--color-3);
+    margin: 10px;
+}
+
+.singleData:hover {
+    background-color: var(--color-3);
+    color: var(--color-text-1);
+}
+
+.anchor_inner_data {
+    color: var(--color-text-1);
 }
 
 .assignment_sidebar {
