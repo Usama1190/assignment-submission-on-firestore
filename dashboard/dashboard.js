@@ -16,13 +16,13 @@ let assignmentList = document.getElementById('assignmentList');
 assignmentsDashboard.style.display = 'none';
 
 let addLogo = document.getElementById('addLogo');
-let assignmentForm = document.getElementById('assignmentForm');
+let assignment_form_wrapper = document.getElementById('assignment_form_wrapper');
 
 let assignmentSubmit = document.getElementById('assignmentSubmit');
 
 let showData = document.getElementById('showData');
 
-assignmentForm.style.display = 'none';
+assignment_form_wrapper.style.display = 'none';
 
 let loader = document.getElementById('loader');
 let submittext = document.getElementById('submittext');
@@ -71,16 +71,20 @@ onAuthStateChanged(auth, (user) => {
 navigateAssignment.addEventListener('click', function() {
     dashboard_front_page.style.display = 'none';
     assignmentsDashboard.style.display = 'block';
+    navigateDashboard.classList.remove('navlink_active');
+    navigateAssignment.classList.add('navlink_active');
 });
 
 navigateDashboard.addEventListener('click', function() {
     dashboard_front_page.style.display = 'flex';
     assignmentsDashboard.style.display = 'none';
+    navigateDashboard.classList.add('navlink_active');
+    navigateAssignment.classList.remove('navlink_active');
 });
 
 
 addLogo.addEventListener('click', function() {
-    assignmentForm.style.display = 'block';
+    assignment_form_wrapper.style.display = 'block';
     assignmentList.style.display = 'none';
 });
 

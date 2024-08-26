@@ -28,11 +28,13 @@
         </div>
 
         <div id="assignmentsDashboard">
-            <div class="assignmentForm borderColor" id="assignmentForm">
-                <span class="fa fa-user"></span> <input type="text" id="student_name" placeholder="Enter your name" class="input mt"><br><br>
-                <span class="fa fa-external-link"></span> <input type="url" id="assignment_link" placeholder="Enter assignment link" class="input"><br>
-                <small id="warning" style="color: rgb(235, 78, 78);"></small><br><br>
-                <button id="assignmentSubmit" class="dashboard_logout_btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="submittext">Submit</span></button>
+            <div id="assignment_form_wrapper">
+                <div class="assignmentForm borderColor">
+                    <span class="fa fa-user"></span> <input type="text" id="student_name" placeholder="Enter your name" class="input mt"><br><br>
+                    <span class="fa fa-external-link"></span> <input type="url" id="assignment_link" placeholder="Enter assignment link" class="input"><br>
+                    <small id="warning" style="color: rgb(235, 78, 78);"></small><br><br>
+                    <button id="assignmentSubmit" class="dashboard_logout_btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="submittext">Submit</span></button>
+                </div>
             </div>
 
             <div id="assignmentList">
@@ -48,12 +50,14 @@
                     <div id="showData"></div>
                 </div>
                 <div class="assignment_sidebar">
-                    <div class="user_avatar_container">
-                        <i class="fa fa-user-o user_avatar"></i>
-                    </div><br>
+                    <div>
+                        <div class="user_avatar_container">
+                            <i class="fa fa-user-o user_avatar"></i>
+                        </div><br>
 
-                    <strong>Average Rating</strong><br><br>
-                    <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                        <strong>Average Rating</strong><br>
+                        <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                    </div>
                 </div>
             </div>
         </div>
