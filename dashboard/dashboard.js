@@ -1,4 +1,4 @@
-import {db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
+import { doc, deleteDoc, db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
 
 let logout = document.getElementById('logout');
 let assignmentsDashboard = document.getElementById('assignmentsDashboard');
@@ -128,7 +128,7 @@ assignmentSubmit.addEventListener('click', addAssignment);
 
 
 const getAssignments = async() => {
-    // dataLoader.style.display = 'block';
+    dataLoader.style.display = 'block';
     showData.innerHTML = '';
 
     try {
@@ -148,13 +148,16 @@ const getAssignments = async() => {
                         <span class="fa fa-user-o"></span> <strong>${student_name}</strong><br /><br />
                     </div>
                     <div>
-                        <span class='fa fa-edit change' title='edit' id='edit'></span> <span class='fa fa-trash change' title='delete' id='delete'></span>
+                        <span class='fa fa-edit change' title='edit' 
+                        onclick='editData("${doc.id}", this)'></span> <span 
+                        class='fa fa-trash change' title='delete' 
+                        onclick='deleteData("${doc.id}", this)'></span>
                     </div>
                 </div>
                 <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
             </div>`;
             // console.log(student_name, assignment_link);
-            // console.log(`${doc.id} => ${doc.data()}`);
+            console.log(`${doc.id} => ${doc.data()}`);
         });
     } catch (error) {
         console.log(error);
@@ -167,4 +170,49 @@ const getAssignments = async() => {
     }
 }
 
+
+
+window.editData = (id, e) => {
+    console.log('editData', id, e);
+    
+}
+
+window.deleteData = async (id, button) => {
+    // console.log('deleteData', id, e);
+
+    button.innerHTML = 'deleting...';
+
+    try {
+        await deleteDoc(doc(db, "assignments", id));
+        getAssignments();
+        
+    }
+    catch(error) {
+        console.log(error);
+        
+    }
+}
+
+
 getAssignments();
+
+// const editData = () => {
+//     console.log('editData');
+    
+// }
+
+// const deleteData = () => {
+//     console.log('deleteData');
+    
+// }
+
+
+// function editData() {
+//     console.log('editData');
+    
+// }
+
+// function deleteData() {
+//     console.log('deleteData');
+    
+// }
