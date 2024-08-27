@@ -129,7 +129,8 @@ assignmentSubmit.addEventListener('click', addAssignment);
 
 const getAssignments = async() => {
     // dataLoader.style.display = 'block';
-    
+    showData.innerHTML = '';
+
     try {
         const querySnapshot = await getDocs(collection(db, "assignments"));
 
@@ -140,9 +141,19 @@ const getAssignments = async() => {
         querySnapshot.forEach((doc) => {
             const { student_name, assignment_link } = doc.data();
             
-            showData.innerHTML += `<div class='singleData'><span class="fa fa-user"></span> <strong>${student_name}</strong><br /><br /><span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a></div>`;
+            showData.innerHTML += `
+            <div class='singleData'>
+                <div class='single_data_header_wrapper'>
+                    <div>
+                        <span class="fa fa-user-o"></span> <strong>${student_name}</strong><br /><br />
+                    </div>
+                    <div>
+                        <span class='fa fa-edit change' title='edit' id='edit'></span> <span class='fa fa-trash change' title='delete' id='delete'></span>
+                    </div>
+                </div>
+                <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
+            </div>`;
             // console.log(student_name, assignment_link);
-        
             // console.log(`${doc.id} => ${doc.data()}`);
         });
     } catch (error) {

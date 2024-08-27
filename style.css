@@ -319,6 +319,16 @@ body {
     color: var(--color-text-1);
 }
 
+.single_data_header_wrapper {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.change {
+    cursor: pointer;
+}
+
 .anchor_inner_data {
     color: var(--color-text-1);
 }
