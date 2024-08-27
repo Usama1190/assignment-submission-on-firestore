@@ -1,4 +1,4 @@
-import { doc, deleteDoc, db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
+import { getDoc, doc, deleteDoc, db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
 
 let logout = document.getElementById('logout');
 let assignmentsDashboard = document.getElementById('assignmentsDashboard');
@@ -37,6 +37,13 @@ loader.style.display = 'none';
 
 let dashboard_front_page = document.getElementById('dashboard_front_page')
 
+let assignmentUpdate = document.getElementById('assignmentUpdate');
+
+assignmentUpdate.style.display = 'none';
+
+let loader2 = document.getElementById('loader2');
+
+loader2.style.display = 'none';
 
 const Logout = () => {
     signOut(auth).then(() => {
@@ -86,6 +93,12 @@ navigateDashboard.addEventListener('click', function() {
 addLogo.addEventListener('click', function() {
     assignment_form_wrapper.style.display = 'flex';
     assignmentList.style.display = 'none';
+
+    student_name.value = 'Enter your name';
+    assignment_link.value = 'Enter assignment link';
+
+    assignmentSubmit.style.display = 'block';
+    assignmentUpdate.style.display = 'none';
 });
 
 const addAssignment = async() => {
@@ -99,7 +112,7 @@ const addAssignment = async() => {
               student_name: student_name.value,
               assignment_link: assignment_link.value,
             });
-            console.log("Document written with ID: ", docRef.id);
+            // console.log("Document written with ID: ", docRef.id);
             getAssignments();
 
         } catch (e) {
@@ -157,7 +170,7 @@ const getAssignments = async() => {
                 <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
             </div>`;
             // console.log(student_name, assignment_link);
-            console.log(`${doc.id} => ${doc.data()}`);
+            // console.log(`${doc.id} => ${doc.data()}`);
         });
     } catch (error) {
         console.log(error);
@@ -172,10 +185,39 @@ const getAssignments = async() => {
 
 
 
-window.editData = (id, e) => {
-    console.log('editData', id, e);
+window.editData = async (id, e) => {
+    // console.log('editData', id, e);
+    assignment_form_wrapper.style.display = 'flex';
+    assignmentList.style.display = 'none';
+
+    assignmentSubmit.style.display = 'none';
+    assignmentUpdate.style.display = 'block';
+
+    try {
+        let currentData = await getDoc(doc(db, "assignments", id));
+        // console.log(currentData.data());
+
+        student_name.value = currentData.data().student_name;
+        assignment_link.value = currentData.data().assignment_link;
+
+        
+        getAssignments();
+        
+    }
+    catch(error) {
+        console.log(error);
+        
+    }
     
 }
+
+assignmentUpdate.addEventListener('click', () => {
+    console.log('Updated!');
+
+    assignment_form_wrapper.style.display = 'none';
+    assignmentList.style.display = 'flex';
+    
+})
 
 window.deleteData = async (id, button) => {
     // console.log('deleteData', id, e);
