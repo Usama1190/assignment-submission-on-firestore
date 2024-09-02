@@ -1,4 +1,4 @@
-import { getDoc, doc, deleteDoc, db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
+import {updateDoc, getDoc, doc, deleteDoc, db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
 
 let logout = document.getElementById('logout');
 let assignmentsDashboard = document.getElementById('assignmentsDashboard');
@@ -44,6 +44,8 @@ assignmentUpdate.style.display = 'none';
 let loader2 = document.getElementById('loader2');
 
 loader2.style.display = 'none';
+
+let isEdit = null;
 
 const Logout = () => {
     signOut(auth).then(() => {
@@ -199,7 +201,7 @@ window.editData = async (id, e) => {
 
         student_name.value = currentData.data().student_name;
         assignment_link.value = currentData.data().assignment_link;
-
+        isEdit = id;
         
         getAssignments();
         
@@ -211,11 +213,24 @@ window.editData = async (id, e) => {
     
 }
 
-assignmentUpdate.addEventListener('click', () => {
+assignmentUpdate.addEventListener('click', async () => {
     console.log('Updated!');
 
     assignment_form_wrapper.style.display = 'none';
     assignmentList.style.display = 'flex';
+
+    try {
+        await updateDoc(doc(db, "assignments", isEdit), {
+            student_name: student_name.value,
+            assignment_link: assignment_link.value
+        });
+        getAssignments();
+        
+    }
+    catch(error) {
+        console.log(error);
+        
+    }
     
 })
 
