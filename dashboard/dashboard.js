@@ -96,8 +96,8 @@ addLogo.addEventListener('click', function() {
     assignment_form_wrapper.style.display = 'flex';
     assignmentList.style.display = 'none';
 
-    student_name.value = 'Enter your name';
-    assignment_link.value = 'Enter assignment link';
+    student_name.value = '';
+    assignment_link.value = '';
 
     assignmentSubmit.style.display = 'block';
     assignmentUpdate.style.display = 'none';
