@@ -10,26 +10,35 @@ let warning = document.getElementById('warning');
 
 let login_btn = document.getElementById('login_btn');
 
-let loader = document.getElementById('loader');
-
 let logintext = document.getElementById('logintext');
 
-// loader.style.display = 'none';
+const side_div_inner_login_btn = document.getElementById('side_div_inner_login_btn');
 
+let loader2 = document.getElementById('loader2');
+let loader_wrapper = document.getElementById('loader_wrapper');
+loader_wrapper.style.zIndex = '-1';
+loader2.style.display = 'none';
+
+
+side_div_inner_login_btn.addEventListener('click', () => {
+    window.location.href = '../signup/index.html';
+})
 
 let loginWithGoogle = document.getElementById('loginWithGoogle');
 
 const login = () => {
     event.preventDefault();
+    loader_wrapper.style.zIndex = '1';
+    loader2.style.display = 'block';
 
-    logintext.innerText = '';
-    loader.style.display = 'block';
+    // logintext.innerText = '';
 
     signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value)
     .then((userCredential) => {
         // Signed in 
         logintext.innerText = 'Login';
-        loader.style.display = 'none';
+        loader_wrapper.style.zIndex = '-1';
+        loader2.style.display = 'none';
 
 
         const user = userCredential.user;
@@ -44,8 +53,9 @@ const login = () => {
         }).showToast();
     })
     .catch((error) => {
-        logintext.innerText = 'Login';
-        loader.style.display = 'none';
+        // logintext.innerText = 'Login';
+        loader_wrapper.style.zIndex = '-1';
+        loader2.style.display = 'none';
 
         const errorCode = error.code;
         const errorMessage = error.message;

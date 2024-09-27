@@ -16,13 +16,13 @@
                 <img src="../assets/firebase_logo2-removebg-preview.png" alt="firebase logo" class="firebase_logo">
                 <h2>Submit Assignment on Firestore</h2>
                 <small class="or">Don't have an account, please</small><br>
-                <a href="../signup/index.html" class="side_div_inner_login">Signup <i class="fa fa-sign-in"></i></a>
+                <button id="side_div_inner_login_btn" class="side_div_inner_btn">Sign up <i class="fa fa-sign-in"></i></button>
             </div>
         </div>
 
         <div class="form_container">
-            <form class="form">
-                <div class="loader_wrapper">
+            <form class="form" id="form">
+                <div id="loader_wrapper">
                     <div id="loader2"></div>
                 </div>
                 <h1 class="heading1">Login</h1>
@@ -42,12 +42,15 @@
 
                 <button type="submit" id="login_btn" class="btn">Login</button><br><br>
                 
-                <small class="or">Don't have an account, please <a href="../signup/index.html">signup</a></small><br>
+                <small class="or">Don't have an account, please <a href="../signup/index.html">sign up</a></small><br><br>
                 
-                <span class="or">or</span><br>
+                <div class="saperator">
+                    <hr class="ruler">
+                    <span class="or">or</span>
+                    <hr class="ruler">
+                </div><br><br>
 
                 <span id="loginWithGoogle" class="borderColor or"><img src="../assets/Google_Icons-09-512.webp" alt="google" style="width: 40px; height: 40px;">Login with google</span>
-
             </form>
         </div>
     </div>

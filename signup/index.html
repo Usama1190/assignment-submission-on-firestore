@@ -12,7 +12,7 @@
 <body>
     <div class="container_wrapper">
         <div class="form_container">
-            <form class="form">
+            <form class="form" id="form">
                 <div id="loader_wrapper">
                     <div id="loader2"></div>
                 </div>
@@ -34,9 +34,13 @@
 
                 <small id="warning" style="color: rgb(216, 97, 97);"></small><br>
 
-                <button type="submit" id="signup_btn" class="btn">Signup</button><br><br>
+                <button type="submit" id="signup_btn" class="btn">Sign up</button><br><br>
 
-                <span class="or">or</span>
+                <div class="saperator">
+                    <hr class="ruler">
+                    <div class="or">or</div>
+                    <hr class="ruler">
+                </div>
                 
                 <span id="loginWithGoogle" class="borderColor or"><img src="../assets/Google_Icons-09-512.webp" alt="google" style="width: 40px; height: 40px;">Signup with google</span><br>
 
@@ -51,7 +55,7 @@
                 <img src="../assets/firebase_logo2-removebg-preview.png" alt="firebase logo" class="firebase_logo">
                 <h2 class="heading">Submit Assignment on Firestore</h2>
                 <small class="or">Do you have already account, please</small><br>
-                <a href="../login/index.html" class="side_div_inner_login">login <i class="fa fa-sign-in"></i></a>
+                <button id="side_div_inner_signin_btn" class="side_div_inner_btn">login <i class="fa fa-sign-in"></i></button>
             </div>
         </div>
     </div>

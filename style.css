@@ -11,6 +11,42 @@ body {
     font-family: sans-serif;
 }
 
+
+
+/* global classes starts */
+
+.input {
+    padding: 13px;
+    border: none;
+    border-bottom: 1px solid var(--color-border-4);
+    width: 93%;
+    border-radius: 4px;
+    color: var(--color-text-1);
+}
+
+.input:focus {
+    outline: none;
+}
+
+.borderColor {
+    border: 1px solid var(--color-border-4);
+}
+
+.saperator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ruler {
+    width: 35%;
+}
+
+/* global classes end */
+
+
+
+
 .container_wrapper {
     display: flex;
     /* border: 1px solid red; */
@@ -43,18 +79,6 @@ body {
     font-size: small;
 }
 
-.input {
-    padding: 13px;
-    border: none;
-    border-bottom: 1px solid var(--color-border-4);
-    width: 93%;
-    border-radius: 4px;
-    color: var(--color-text-1);
-}
-
-.input:focus {
-    outline: none;
-}
 
 .remember_me_forget_wrapper {
     display: flex;
@@ -147,17 +171,19 @@ body {
 }
 
 
-.side_div_inner_login {
+.side_div_inner_btn {
     text-decoration: underline;
-    color: var(--color-3);
+    color: var(--color-text-1);
     border: 1px solid var(--color-3);
     border-radius: 4px;
     padding: 12px 20px;
     transition: all 0.1s;
+    font-weight: 700;
 }
 
-.side_div_inner_login:hover {
+.side_div_inner_btn:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
 }
 
 .icon:hover {
