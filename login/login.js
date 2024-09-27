@@ -14,7 +14,7 @@ let loader = document.getElementById('loader');
 
 let logintext = document.getElementById('logintext');
 
-loader.style.display = 'none';
+// loader.style.display = 'none';
 
 
 let loginWithGoogle = document.getElementById('loginWithGoogle');

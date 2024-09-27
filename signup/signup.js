@@ -5,8 +5,12 @@ const [userName, userEmail, userPassword ] = formField;
 
 let signup_btn = document.getElementById('signup_btn');
 let signuptext = document.getElementById('signuptext');
-let loader = document.getElementById('loader');
-loader.style.display = 'none';
+
+let loader2 = document.getElementById('loader2');
+let loader_wrapper = document.getElementById('loader_wrapper');
+loader_wrapper.style.zIndex = '-1';
+loader2.style.display = 'none';
+
 let confirmPasswrod = document.getElementById('confirmPasswrod');
 // let userName = document.getElementById('userName');
 
@@ -17,7 +21,8 @@ console.log(userName);
 const signUp = () => {
     event.preventDefault();
     signuptext.innerText = '';
-    loader.style.display = 'block';
+    loader2.style.display = 'block';
+    loader_wrapper.style.zIndex = '1';
 
     console.log(userName.value, 'userName');
     
@@ -26,7 +31,8 @@ const signUp = () => {
         createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
         .then((userCredential) => {
             signuptext.innerText = 'Signup';
-            loader.style.display = 'none';
+            loader2.style.display = 'none';
+            loader_wrapper.style.zIndex = '-1';
 
             const user = userCredential.user;
 
@@ -41,7 +47,9 @@ const signUp = () => {
         })
         .catch((error) => {
             signuptext.innerText = 'Signup';
-            loader.style.display = 'none';
+            loader2.style.display = 'none';
+            loader_wrapper.style.zIndex = '-1';
+
 
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -59,7 +67,8 @@ const signUp = () => {
     else {
         warning.innerText = "Input fields is not valid!";
         signuptext.innerText = 'Signup';
-        loader.style.display = 'none';
+        loader2.style.display = 'none';
+        loader_wrapper.style.zIndex = '-1';
     }
 }
 
