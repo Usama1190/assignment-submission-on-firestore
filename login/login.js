@@ -10,14 +10,15 @@ let warning = document.getElementById('warning');
 
 let login_btn = document.getElementById('login_btn');
 
-let logintext = document.getElementById('logintext');
+let form = document.getElementById('form');
+form.style.opacity = '1';
 
 const side_div_inner_login_btn = document.getElementById('side_div_inner_login_btn');
 
-let loader2 = document.getElementById('loader2');
+let loader = document.getElementById('loader');
 let loader_wrapper = document.getElementById('loader_wrapper');
 loader_wrapper.style.zIndex = '-1';
-loader2.style.display = 'none';
+loader.style.display = 'none';
 
 
 side_div_inner_login_btn.addEventListener('click', () => {
@@ -29,16 +30,17 @@ let loginWithGoogle = document.getElementById('loginWithGoogle');
 const login = () => {
     event.preventDefault();
     loader_wrapper.style.zIndex = '1';
-    loader2.style.display = 'block';
+    loader.style.display = 'block';
+    form.style.opacity = '0.3';
 
     // logintext.innerText = '';
 
     signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value)
     .then((userCredential) => {
         // Signed in 
-        logintext.innerText = 'Login';
         loader_wrapper.style.zIndex = '-1';
-        loader2.style.display = 'none';
+        loader.style.display = 'none';
+        form.style.opacity = '1';
 
 
         const user = userCredential.user;
@@ -55,7 +57,8 @@ const login = () => {
     .catch((error) => {
         // logintext.innerText = 'Login';
         loader_wrapper.style.zIndex = '-1';
-        loader2.style.display = 'none';
+        loader.style.display = 'none';
+        form.style.opacity = '1';
 
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -76,9 +79,17 @@ login_btn.addEventListener('click', login);
 
 
 const forgotPass = () => {
+    loader_wrapper.style.zIndex = '1';
+    loader.style.display = 'block';
+    form.style.opacity = '0.3';
+
     sendPasswordResetEmail(auth, loginEmail.value)
     .then(() => {
         warning.innerText = 'Password send check email';
+        loader_wrapper.style.zIndex = '-1';
+        loader.style.display = 'none';
+        form.style.opacity = '1';
+
         Toastify({
             text: 'Password send check email',
             duration: 3000
@@ -87,6 +98,10 @@ const forgotPass = () => {
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+
+        loader_wrapper.style.zIndex = '-1';
+        loader.style.display = 'none';
+        form.style.opacity = '1';
 
         warning.innerText = 'Something went wrong!';
         Toastify({
@@ -102,19 +117,30 @@ forgotPassword.addEventListener('click', forgotPass);
 const provider = new GoogleAuthProvider();
 
 const loginGoogle = () => {
+    loader_wrapper.style.zIndex = '1';
+    loader.style.display = 'block';
+    form.style.opacity = '0.3';
+
     signInWithPopup(auth, provider)
     .then((result) => {
+        loader_wrapper.style.zIndex = '-1';
+        loader.style.display = 'none';
+        form.style.opacity = '1';
+
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
         console.log(user);
         
     }).catch((error) => {
+        loader_wrapper.style.zIndex = '-1';
+        loader.style.display = 'none';
+        form.style.opacity = '1';
+
         const errorCode = error.code;
         const errorMessage = error.message;
 
         console.log(errorMessage);
-        
     });
     
 }
