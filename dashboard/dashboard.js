@@ -47,6 +47,8 @@ loader2.style.display = 'none';
 
 let isEdit = null;
 
+
+/*
 const Logout = () => {
     signOut(auth).then(() => {
         // Sign-out successful.
@@ -68,7 +70,7 @@ const Logout = () => {
 }
 
 logout.addEventListener('click', Logout);
-
+*/
 
 
 onAuthStateChanged(auth, (user) => {
@@ -171,8 +173,8 @@ const getAssignments = async() => {
                 </div>
                 <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
             </div>`;
-            // console.log(student_name, assignment_link);
-            // console.log(`${doc.id} => ${doc.data()}`);
+            console.log(student_name, assignment_link);
+            console.log(`${doc.id} => ${doc.data()}`);
         });
     } catch (error) {
         console.log(error);
@@ -250,8 +252,14 @@ window.deleteData = async (id, button) => {
     }
 }
 
-
 getAssignments();
+
+
+
+
+
+
+
 
 // const editData = () => {
 //     console.log('editData');

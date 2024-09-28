@@ -67,7 +67,7 @@ const signUp = () => {
         });
     }
     else {
-        warning.innerText = "Input fields is not valid!";
+        warning.innerText = "Confirmed password dosn't matched!";
         loader.style.display = 'none';
         loader_wrapper.style.zIndex = '-1';
         form.style.opacity = '1';
