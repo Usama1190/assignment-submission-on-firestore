@@ -26,18 +26,17 @@ side_div_inner_signin_btn.addEventListener('click', () => {
 
 const signUp = () => {
     event.preventDefault();
-    signuptext.innerText = '';
+    // signuptext.innerText = '';
     loader2.style.display = 'block';
     loader_wrapper.style.zIndex = '1';
     form.style.opacity = '0.3';
 
-    console.log(userName.value, 'userName');
+    // console.log(userName.value, 'userName');
     
 
     if(userName.value !== '' && userPassword.value === confirmPasswrod.value) {
         createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
         .then((userCredential) => {
-            signuptext.innerText = 'Signup';
             loader2.style.display = 'none';
             loader_wrapper.style.zIndex = '-1';
             form.style.opacity = '';
@@ -54,7 +53,6 @@ const signUp = () => {
             // ...
         })
         .catch((error) => {
-            signuptext.innerText = 'Signup';
             loader2.style.display = 'none';
             loader_wrapper.style.zIndex = '-1';
             form.style.opacity = '1';
@@ -75,11 +73,13 @@ const signUp = () => {
     }
     else {
         warning.innerText = "Input fields is not valid!";
-        signuptext.innerText = 'Signup';
         loader2.style.display = 'none';
         loader_wrapper.style.zIndex = '-1';
         form.style.opacity = '1';
     }
+    loader2.style.display = 'none';
+    loader_wrapper.style.zIndex = '-1';
+    form.style.opacity = '1';
 }
 
 
