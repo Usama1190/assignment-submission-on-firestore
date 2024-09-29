@@ -38,8 +38,8 @@
                     <span class="fa fa-user"></span> <input type="text" id="student_name" placeholder="Enter your name" class="input mt" required><br><br>
                     <span class="fa fa-external-link"></span> <input type="url" id="assignment_link" placeholder="Enter assignment link" class="input" required><br>
                     <small id="warning" style="color: rgb(235, 78, 78);"></small><br><br>
-                    <button id="assignmentSubmit" class="dashboard_logout_btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader"></i><span id="submittext">Submit</span></button>
-                    <button id="assignmentUpdate" class="dashboard_logout_btn"><i class="fa fa-spinner fa-spin" style="font-size: 15px;" id="loader2"></i><span id="submittext">Save changes</span></button>
+                    <button id="assignment_submit_btn" class="dashboard_logout_btn">Submit</button>
+                    <button id="assignment_update_btn" class="dashboard_logout_btn"></>Save changes</button>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                         <div class="header_content">
                             <span class="header_content_heading">Submitted Assignments</span>
                             <div>
-                                <button class="dashboard_logout_btn" id="addLogo" type="button">Add assignment</button>
+                                <button class="dashboard_logout_btn" id="addAssignment_btn" type="button">Add assignment</button>
                             </div>
                         </div>
 
@@ -74,5 +74,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src="../firebase.js"></script>
     <script type="module" src="dashboard.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

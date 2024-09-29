@@ -1,4 +1,4 @@
-import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase.js";
+import { auth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from "../firebase.js";
 
 let formField = document.querySelectorAll('form input');
 const [userEmail, userPassword ] = formField;
