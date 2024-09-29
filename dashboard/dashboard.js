@@ -28,9 +28,9 @@ const loaders = {
     dataLoader: document.getElementById('dataLoader'),
 }
 
-loaders.loader2.style.display = 'none';
+// loaders.loader2.style.display = 'none';
 loaders.dataLoader.style.display = 'none';
-loaders.loader.style.display = 'none';
+// loaders.loader.style.display = 'none';
 
 let isEdit = null;
 let warning = document.getElementById('warning');
@@ -82,37 +82,29 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-
-/*
 const addAssignment = async() => {
-    if(student_name.value !== '' && assignment_link !== '') {
+    if(assignment.student_name.value !== '' && assignment.assignment_link !== '') {
         warning.innerText = '';
         try {
-            loader.style.display = 'block';
-            submittext.innerText = '';
+            // loader.style.display = 'block';
             
             const docRef = await addDoc(collection(db, "assignments"), {
-              student_name: student_name.value,
-              assignment_link: assignment_link.value,
+              student_name: assignment.student_name.value,
+              assignment_link: assignment.assignment_link.value,
             });
             console.log("Document written with ID: ", docRef.id);
             getAssignments();
 
         } catch (e) {
-            loader.style.display = 'none';
-            submittext.innerText = 'Submit';
-
             console.error("Error adding document: ", e);
+
         }
         finally {
-            loader.style.display = 'none';
-            submittext.innerText = 'Submit';
+            assignment.assignment_form_wrapper.style.display = 'none';
+            assignment.assignmentList.style.display = 'flex';
 
-            assignment_form_wrapper.style.display = 'none';
-            assignmentList.style.display = 'flex';
-
-            student_name.value = '';
-            assignment_link.value = '';
+            assignment.student_name.value = '';
+            assignment.assignment_link.value = '';
         }
     }
     else {
@@ -120,30 +112,27 @@ const addAssignment = async() => {
     }
 }
 
-assignment_submit_btn.addEventListener('click', addAssignment);
-*/
+assignment_btns.assignment_submit_btn.addEventListener('click', addAssignment);
+
 
 
 const getAssignments = async() => {
-    dataLoader.style.display = 'block';
-    showData.innerHTML = '';
-
+    // loaders.dataLoader.style.display = 'block';
+    assignment.showData.innerHTML = '';    
+    
+    /*
     try {
         const querySnapshot = await getDocs(collection(db, "assignments"));        
 
         if(querySnapshot.empty) {
-            showData.innerHTML += `<div class='singleData'>Students assignment is not available!</div>`;
+            assignment.showData.innerHTML += `<div class='singleData'>Students assignment is not available!</div>`;
             
         }
-        else {
-            console.log('hello usama');
-            
-        }
-        /*
+
         querySnapshot.forEach((doc) => {
             const { student_name, assignment_link } = doc.data();
             
-            showData.innerHTML += `
+            assignment.showData.innerHTML += `
             <div class='singleData'>
                 <div class='single_data_header_wrapper'>
                     <div>
@@ -158,39 +147,42 @@ const getAssignments = async() => {
                 </div>
                 <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
             </div>`;
-            console.log(student_name, assignment_link);
-            console.log(`${doc.id} => ${doc.data()}`);
+            // console.log(assignment.student_name, assignment_link);
+            // console.log(`${doc.id} => ${doc.data()}`);
         });
-        */
 
-    } catch (error) {
-        showData.innerHTML = error;
+    } 
+    catch (error) {
+        assignment.showData.innerHTML = error;
         // console.log(error);
-        dataLoader.style.display = 'none';
+        loaders.dataLoader.style.display = 'none';
         
     }
     finally {
-        dataLoader.style.display = 'none';
+        loaders.dataLoader.style.display = 'none';
 
     }
+    */
 }
+
+getAssignments();
 
 
 
 window.editData = async (id, e) => {
     // console.log('editData', id, e);
-    assignment_form_wrapper.style.display = 'flex';
-    assignmentList.style.display = 'none';
+    assignment.assignment_form_wrapper.style.display = 'flex';
+    assignment.assignmentList.style.display = 'none';
 
-    assignment_submit_btn.style.display = 'none';
-    assignment_update_btn.style.display = 'block';
+    assignment_btns.assignment_submit_btn.style.display = 'none';
+    assignment_btns.assignment_update_btn.style.display = 'block';
 
     try {
         let currentData = await getDoc(doc(db, "assignments", id));
         // console.log(currentData.data());
 
-        student_name.value = currentData.data().student_name;
-        assignment_link.value = currentData.data().assignment_link;
+        assignment.student_name.value = currentData.data().student_name;
+        assignment.assignment_link.value = currentData.data().assignment_link;
         isEdit = id;
         
         getAssignments();
@@ -203,32 +195,28 @@ window.editData = async (id, e) => {
     
 }
 
-assignment_update_btn.addEventListener('click', async () => {
+assignment_btns.assignment_update_btn.addEventListener('click', async () => {
     console.log('Updated!');
 
-    assignment_form_wrapper.style.display = 'none';
-    assignmentList.style.display = 'flex';
+    assignment.assignment_form_wrapper.style.display = 'none';
+    assignment.assignmentList.style.display = 'flex';
 
     try {
         await updateDoc(doc(db, "assignments", isEdit), {
-            student_name: student_name.value,
-            assignment_link: assignment_link.value
+            student_name: assignment.student_name.value,
+            assignment_link: assignment.assignment_link.value
         });
         getAssignments();
-        
     }
     catch(error) {
         console.log(error);
         
     }
-    
-})
+});
 
 window.deleteData = async (id, button) => {
     // console.log('deleteData', id, e);
-
     button.innerHTML = 'deleting...';
-
     try {
         await deleteDoc(doc(db, "assignments", id));
         getAssignments();
@@ -240,7 +228,6 @@ window.deleteData = async (id, button) => {
     }
 }
 
-getAssignments();
 
 
 
@@ -249,23 +236,26 @@ getAssignments();
 
 
 
-// const editData = () => {
-//     console.log('editData');
+
+/*
+const editData = () => {
+    console.log('editData');
     
-// }
+}
 
-// const deleteData = () => {
-//     console.log('deleteData');
+const deleteData = () => {
+    console.log('deleteData');
     
-// }
+}
 
 
-// function editData() {
-//     console.log('editData');
+function editData() {
+    console.log('editData');
     
-// }
+}
 
-// function deleteData() {
-//     console.log('deleteData');
+function deleteData() {
+    console.log('deleteData');
     
-// }
+}
+*/
