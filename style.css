@@ -342,8 +342,13 @@ body {
     text-shadow: 2px 2px 2px black;
 }
 
+.data_wrapper {
+    margin-top: 30px;
+    /* border: 1px solid purple; */
+}
+
 #showData {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     padding: 20px;
 }
 

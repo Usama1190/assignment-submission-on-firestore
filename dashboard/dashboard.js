@@ -23,14 +23,11 @@ assignment_btns.assignment_update_btn.style.display = 'none';
 
 
 const loaders = {
-    loader: document.getElementById('loader'),
     loader2: document.getElementById('loader2'),
-    dataLoader: document.getElementById('dataLoader'),
+    loader: document.getElementById('loader'),
 }
 
-// loaders.loader2.style.display = 'none';
-loaders.dataLoader.style.display = 'none';
-// loaders.loader.style.display = 'none';
+loaders.loader.style.display = 'none';
 
 let isEdit = null;
 let warning = document.getElementById('warning');
@@ -117,21 +114,21 @@ assignment_btns.assignment_submit_btn.addEventListener('click', addAssignment);
 
 
 const getAssignments = async() => {
-    // loaders.dataLoader.style.display = 'block';
+    loaders.loader.style.display = 'block';
     assignment.showData.innerHTML = '';    
     
-    /*
     try {
-        const querySnapshot = await getDocs(collection(db, "assignments"));        
-
+        const querySnapshot = await getDocs(collection(db, "assignments"));                
+        
         if(querySnapshot.empty) {
             assignment.showData.innerHTML += `<div class='singleData'>Students assignment is not available!</div>`;
             
         }
-
+        
         querySnapshot.forEach((doc) => {
             const { student_name, assignment_link } = doc.data();
             
+        
             assignment.showData.innerHTML += `
             <div class='singleData'>
                 <div class='single_data_header_wrapper'>
@@ -147,22 +144,24 @@ const getAssignments = async() => {
                 </div>
                 <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
             </div>`;
+        
             // console.log(assignment.student_name, assignment_link);
             // console.log(`${doc.id} => ${doc.data()}`);
         });
 
+        
     } 
     catch (error) {
         assignment.showData.innerHTML = error;
         // console.log(error);
-        loaders.dataLoader.style.display = 'none';
+        loaders.loader.style.display = 'none';
         
     }
     finally {
-        loaders.dataLoader.style.display = 'none';
+        loaders.loader.style.display = 'none';
 
     }
-    */
+
 }
 
 getAssignments();
