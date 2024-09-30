@@ -1,7 +1,7 @@
-import { auth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from "../firebase.js";
+import { auth, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from "../firebase.js";
 
 let formField = document.querySelectorAll('form input');
-const [userEmail, userPassword ] = formField;
+const [userName, userEmail, userPassword ] = formField;
 
 let signup_btn = document.getElementById('signup_btn');
 let signupWithGoogle = document.getElementById('signupWithGoogle');
@@ -20,6 +20,8 @@ side_div_inner_signin_btn.addEventListener('click', () => {
     window.location.href = '../login/index.html';
 });
 
+console.log(userName.value, 'userName1');
+
 
 
 const signUp = () => {
@@ -28,8 +30,9 @@ const signUp = () => {
     loader_wrapper.style.zIndex = '1';
     form.style.opacity = '0.3';    
     
+    console.log(userName.value, 'userName2');
 
-    if(userPassword.value === confirmPasswrod.value) {
+    if(userName.value !== '' && userPassword.value === confirmPasswrod.value) {
         createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
         .then((userCredential) => {
             loader.style.display = 'none';
@@ -67,7 +70,7 @@ const signUp = () => {
         });
     }
     else {
-        warning.innerText = "Confirmed password dosn't matched!";
+        warning.innerText = "input fields is not valid!";
         loader.style.display = 'none';
         loader_wrapper.style.zIndex = '-1';
         form.style.opacity = '1';
@@ -80,6 +83,7 @@ signup_btn.addEventListener('click', signUp);
 
 
 
+const provider = new GoogleAuthProvider();
 
 const signup_Google = () => {
     loader_wrapper.style.zIndex = '1';
@@ -119,3 +123,5 @@ onAuthStateChanged(auth, (user) => {
         window.location.href = '../dashboard/dashboard.html';
     }
 });
+
+export {userName};
