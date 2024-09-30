@@ -411,7 +411,6 @@ body {
 /* loader starts */
 
 #loader_wrapper {
-    /* border: 1px solid red; */
     height: 90vh;
     width: 50vw;
     display: flex;
@@ -429,6 +428,11 @@ body {
     height: 30px;
     -webkit-animation: spin 1s linear infinite; /* Safari */
     animation: spin 1s linear infinite;
+}
+
+#loader1_wrapper {
+    display: flex;
+    justify-content: center;
 }
 
 /* Safari */
