@@ -216,10 +216,12 @@ body {
     align-items: center;
     background-color: var(--color-text-1);
     padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .nav_left_wrapper {
-    width: 30%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
 }
@@ -314,18 +316,20 @@ body {
 #assignmentList {
     width: 100%;
     height: 99vh;
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
     /* border: 1px solid black; */
 }
 
-/* .assignment_wrapper {
-} */
+.assignment_wrapper {
+    /* border: 1px solid red; */
+    width: 95%;
+}
 
 .assignment_content {
-    margin-top: 100px;
-    border: 1px solid var(--color-border-4);
-    width: 45rem;
+    margin-top: 30px;
+    /* border: 1px solid var(--color-border-4); */
+    width: 100%;
     padding: 20px;
     border-radius: 10px;
 }
@@ -354,17 +358,16 @@ body {
 
 .singleData {
     border: 1px solid var(--color-border-4);
-    padding: 12px;
+    padding: 20px 12px;
     border-radius: 10px;
-    background-color: var(--color-2);
+    /* background-color: var(--color-text-1); */
     transition: all 0.3s;
-    color: var(--color-3);
+    color: var(--color-text-1);
     margin: 10px;
 }
 
 .singleData:hover {
     background-color: var(--color-3);
-    color: var(--color-text-1);
 }
 
 .single_data_header_wrapper {
@@ -381,12 +384,13 @@ body {
     color: var(--color-text-1);
 }
 
+/*
 .assignment_sidebar {
     width: 10rem;
     height: 10rem;
     display: flex;
     justify-content: center;
-    /* border: 1px solid yellow; */
+    border: 1px solid yellow;
     color: var(--color-3);
     text-align: center;
 }
@@ -394,6 +398,7 @@ body {
 .user_avatar {
     font-size: 8rem;
 }
+*/
 
 .newAssignment {
     /* border: 1px solid black; */
