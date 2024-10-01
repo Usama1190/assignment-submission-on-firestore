@@ -1,5 +1,10 @@
 import {updateDoc, getDoc, doc, deleteDoc, db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
 
+import { userEmail } from "../signup/signup.js";
+
+console.log(userEmail);
+
+
 let logout = document.getElementById('logout');
 
 const assignment = {

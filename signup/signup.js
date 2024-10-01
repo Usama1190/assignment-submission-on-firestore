@@ -124,4 +124,4 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-export {userName};
+export {userEmail};
