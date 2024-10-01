@@ -1,9 +1,6 @@
 import {updateDoc, getDoc, doc, deleteDoc, db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
 
-import { userEmail } from "../signup/signup.js";
-
 // console.log(userEmail);
-
 
 let logout = document.getElementById('logout');
 
@@ -32,6 +29,59 @@ const loaders = {
     loader: document.getElementById('loader'),
 }
 
+const todayDate = {
+    date: (new Date).getDate(),
+    month: (new Date).getMonth() + 1,
+    year: (new Date().getFullYear())
+}
+
+let month = todayDate.month;
+
+switch (month) {
+    case 1:
+        month = 'Jan';
+        break;
+    case 2:
+        month = 'Feb';
+        break;
+    case 3:
+        month = 'Mar';
+        break;
+    case 4:
+        month = 'Apr';
+        break;
+    case 5:
+        month = 'May';
+        break;
+    case 6:
+        month = 'Jun';
+        break;
+    case 7:
+        month = 'Jul';
+        break;
+    case 8:
+        month = 'Aug';
+        break;
+    case 9:
+        month = 'Sep';
+        break;
+    case 10:
+        month = 'Oct';
+        break;
+    case 11:
+        month = 'Nov';
+        break;
+    case 12:
+        month = 'Dec';
+        break;
+
+    default:
+        month === 'Qayamat';        
+        break;
+}
+
+const date = `${month} ${todayDate.date}, ${todayDate.year}`;
+
 loaders.loader.style.display = 'none';
 
 let isEdit = null;
@@ -50,9 +100,6 @@ assignment_btns.addAssignment_btn.addEventListener('click', function() {
     assignment_btns.assignment_submit_btn.style.display = 'block';
     assignment_btns.assignment_update_btn.style.display = 'none';
 });
-
-
-
 
 const Logout = () => {
     signOut(auth).then(() => {
@@ -93,6 +140,7 @@ const addAssignment = async() => {
             const docRef = await addDoc(collection(db, "assignments"), {
               student_name: assignment.student_name.value,
               assignment_link: assignment.assignment_link.value,
+              date: date,
             });
             console.log("Document written with ID: ", docRef.id);
             getAssignments();
@@ -131,14 +179,14 @@ const getAssignments = async() => {
         }
         
         querySnapshot.forEach((doc) => {
-            const { student_name, assignment_link } = doc.data();
+            const { student_name, assignment_link, date } = doc.data();
             
         
             assignment.showData.innerHTML += `
             <div class='singleData'>
                 <div class='single_data_header_wrapper'>
                     <div>
-                        <span class="fa fa-user-o"></span> <strong>${student_name}</strong><br /><br />
+                        <span class="fa fa-user-o"></span> <strong>${student_name}</strong> <small>${date}</small><br /><br />
                     </div>
                     <div>
                         <span class='fa fa-edit change' title='edit' 
