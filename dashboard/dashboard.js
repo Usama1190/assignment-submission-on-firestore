@@ -2,7 +2,7 @@ import {updateDoc, getDoc, doc, deleteDoc, db, getDocs,  collection, addDoc , au
 
 import { userEmail } from "../signup/signup.js";
 
-console.log(userEmail);
+// console.log(userEmail);
 
 
 let logout = document.getElementById('logout');

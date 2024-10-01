@@ -1,28 +1,30 @@
 import { auth, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from "../firebase.js";
 
 let formField = document.querySelectorAll('form input');
-const [userName, userEmail, userPassword ] = formField;
+const [ userName, userEmail, userPassword ] = formField;
 
-let signup_btn = document.getElementById('signup_btn');
-let signupWithGoogle = document.getElementById('signupWithGoogle');
+const wrapper = {
+    form: document.getElementById('form'),
+    loader_wrapper: document.getElementById('loader_wrapper'),
+    loader: document.getElementById('loader'),
+}
 
-let form = document.getElementById('form');
-let loader = document.getElementById('loader');
-let loader_wrapper = document.getElementById('loader_wrapper');
-loader_wrapper.style.zIndex = '-1';
-loader.style.display = 'none';
+const btns = {
+    signup_btn: document.getElementById('signup_btn'),
+    signup_with_google_btn: document.getElementById('signupWithGoogle'),
+    side_div_inner_signin_btn: document.getElementById('side_div_inner_signin_btn'),
+    confirm_password_btn: document.getElementById('confirmPasswrod'),
+}
 
-const side_div_inner_signin_btn = document.getElementById('side_div_inner_signin_btn');
+wrapper.loader_wrapper.style.zIndex = '-1';
+wrapper.loader.style.display = 'none';
 
-let confirmPasswrod = document.getElementById('confirmPasswrod');
 
-side_div_inner_signin_btn.addEventListener('click', () => {
+// ============================= Functionality ================================
+
+btns.side_div_inner_signin_btn.addEventListener('click', () => {
     window.location.href = '../login/index.html';
 });
-
-console.log(userName.value, 'userName1');
-
-
 
 const signUp = () => {
     event.preventDefault();
@@ -77,11 +79,7 @@ const signUp = () => {
     }
 }
 
-
-
-signup_btn.addEventListener('click', signUp);
-
-
+btns.signup_btn.addEventListener('click', signUp);
 
 const provider = new GoogleAuthProvider();
 
@@ -114,9 +112,7 @@ const signup_Google = () => {
     
 }
 
-signupWithGoogle.addEventListener('click', signup_Google);
-
-
+btns.signup_with_google_btn.addEventListener('click', signup_Google);
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
