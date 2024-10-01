@@ -184,7 +184,7 @@ const getAssignments = async() => {
         
             assignment.showData.innerHTML += `
             <div class='singleData'>
-                <div class='single_data_header_wrapper'>
+                <div class='single_data_header_wrapper color_dark'>
                     <div>
                         <span class="fa fa-user-o"></span> <strong>${student_name}</strong> <small>${date}</small><br /><br />
                     </div>
@@ -195,7 +195,9 @@ const getAssignments = async() => {
                         onclick='deleteData("${doc.id}", this)'></span>
                     </div>
                 </div>
-                <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
+                <div class='color_dark'>
+                    <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
+                </div>
             </div>`;
         
             // console.log(assignment.student_name, assignment_link);

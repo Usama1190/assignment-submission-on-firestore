@@ -15,6 +15,10 @@ body {
 
 /* global classes starts */
 
+.color_dark {
+    color: #202020;
+}
+
 .input {
     padding: 13px;
     border: none;
@@ -338,7 +342,7 @@ body {
 
 .assignment_content {
     margin-top: 30px;
-    /* border: 1px solid var(--color-border-4); */
+    border: 1px solid var(--color-border-4);
     width: 100%;
     padding: 20px;
     border-radius: 10px;
@@ -351,13 +355,14 @@ body {
 }
 
 .header_content_heading {
-    color: var(--color-3);
+    color: #202020;
     font-size: 35px;
-    text-shadow: 2px 2px 2px black;
+    /* text-shadow: 2px 2px 2px black; */
 }
 
 .data_wrapper {
     margin-top: 30px;
+    width: 75%;
     /* border: 1px solid purple; */
 }
 
@@ -367,6 +372,7 @@ body {
 }
 
 .singleData {
+    color: #202020;
     border: 1px solid var(--color-border-4);
     padding: 20px 12px;
     border-radius: 10px;
@@ -391,7 +397,12 @@ body {
 }
 
 .anchor_inner_data {
-    color: var(--color-text-1);
+    transition: all 0.3s;
+    color: #7c7979;
+}
+
+.anchor_inner_data:hover {
+    opacity: 0.4;
 }
 
 /*
