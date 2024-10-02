@@ -1,10 +1,7 @@
 import {updateDoc, getDoc, doc, deleteDoc, db, getDocs,  collection, addDoc , auth, signOut, onAuthStateChanged } from "../firebase.js";
 
-// console.log(userEmail);
 
 let logout = document.getElementById('logout');
-
-// logout.style.display = 'none';
 
 const assignment = {
     student_name: document.getElementById('student_name'),

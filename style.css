@@ -21,24 +21,74 @@ body {
     color: #868686;
 }
 
-.ml_20 {
-    margin-left: -20px;
+.color_text1 {
+    color: var(--color-text-1);
+}
+
+.color_text2 {
+    color: var(--color-border-4);
+}
+
+.color_text3 {
+    color: var(--color-3);
+}
+
+
+
+
+
+
+
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+
+
+
+
+.width_40 {
+    width: 40%;
+}
+
+.width_100 {
+    width: 100%;
+}
+
+
+
+
+
+.border_red {
+    border: 1px solid red;
 }
 
 .b_bottom {
     border-bottom: 1px solid var(--color-text-1);
 }
 
-.cursor_pointer {
-    cursor: pointer;
+.borderColor {
+    border: 1px solid var(--color-border-4);
 }
 
-.width_40 {
-    width: 40%;
+.border_color2 {
+    border: 1px solid var(--color-text-1);
 }
 
-.border_red {
-    border: 1px solid red;
+.bg_color1 {
+    background-color: var(--color-text-1);
+}
+
+.bg_color2 {
+    background-color: var(--color-border-4);
+}
+
+
+
+
+.ml_20 {
+    margin-left: -20px;
 }
 
 .mt_30 {
@@ -48,6 +98,10 @@ body {
 .ml_5 {
     margin-left: 5px;
 }
+
+
+
+
 
 .d_flex {
     display: flex;
@@ -70,6 +124,10 @@ body {
 }
 
 
+
+
+
+
 .input {
     padding: 13px;
     border: none;
@@ -83,9 +141,6 @@ body {
     outline: none;
 }
 
-.borderColor {
-    border: 1px solid var(--color-border-4);
-}
 
 .saperator {
     display: flex;
@@ -165,10 +220,8 @@ body {
 
 .btn {
     padding: 12px;
-    width: 100%;
     font-weight: 900;
     opacity: 0.7;
-    cursor: pointer;
     border-radius: 6px;
     color: var(--color-3);
     background-color: var(--color-text-1);
