@@ -199,9 +199,6 @@ const getAssignments = async() => {
                     <span class="fa fa-external-link"></span> <a href=${assignment_link} target='_blank' class='anchor_inner_data'>${assignment_link}</a>
                 </div>
             </div>`;
-        
-            // console.log(assignment.student_name, assignment_link);
-            // console.log(`${doc.id} => ${doc.data()}`);
         });
 
         
