@@ -21,7 +21,7 @@
             <div class="nav_left_wrapper">
                 <div class="d_flex align_center">
                     <a href="#" class="logo_anchor"><img src="../assets/uilogo-removebg-preview.png" class="logo_image" alt="logo"></a>
-                    <span id="navigate_dashboard" class="navlink navlink_active ml_5">Dashboard</span>
+                    <span id="navigate_dashboard" class="navlink navlink_active ml_5 b_bottom">Dashboard</span>
                 </div>
                 <span id="navigate_newassignment" class="navlink">New assignment</span>
                 <span id="navigate_classassignment" class="navlink">Class work</span>
@@ -29,7 +29,16 @@
             </div>
             <div class="nav_right_wrapper d_flex j_between align_center">
                 <span class="theme_wrapper cursor_pointer"><i class="fa fa-sun-o"></i></span>
-                <span id="logout" class="dashboard_logout_btn">LogOut <i class="fa fa-sign-out"></i></span>
+
+                <div class="dropdown" style="float:right;">
+                    <strong>USER</strong><span class="dropbtn"><i class="fa fa-user"></i></span>
+                    <div class="dropdown-content">
+                        <span id="profile_btn" class="navlink b_bottom">Profile</span>
+                        <button id="logout" class="dashboard_logout_btn mt_30">LogOut <i class="fa fa-sign-out"></i></button>
+                    </div>
+                </div>
+
+                
             </div>
         </div>
 

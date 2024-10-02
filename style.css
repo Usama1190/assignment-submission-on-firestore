@@ -17,6 +17,10 @@ body {
 
 /* global classes starts */
 
+.b_bottom {
+    border-bottom: 1px solid var(--color-text-1);
+}
+
 .cursor_pointer {
     cursor: pointer;
 }

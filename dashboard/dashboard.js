@@ -4,6 +4,8 @@ import {updateDoc, getDoc, doc, deleteDoc, db, getDocs,  collection, addDoc , au
 
 let logout = document.getElementById('logout');
 
+// logout.style.display = 'none';
+
 const assignment = {
     student_name: document.getElementById('student_name'),
     assignment_link: document.getElementById('assignment_link'),
@@ -19,6 +21,7 @@ const assignment_btns = {
     addAssignment_btn: document.getElementById('addAssignment_btn'),
     assignment_submit_btn: document.getElementById('assignment_submit_btn'),
     assignment_update_btn: document.getElementById('assignment_update_btn'),
+    user_icon_btn: document.getElementById('user_icon_btn')
 }
 
 assignment_btns.assignment_update_btn.style.display = 'none';
