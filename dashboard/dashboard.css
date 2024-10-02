@@ -42,8 +42,10 @@
 
 .nav_search_bar {
     border: 1px solid var(--color-border-4);
+    border-radius: 4px;
     width: 90%;
     padding: 6px;
+    color: var(--color-dark);
 }
 
 .nav_search_bar:focus {

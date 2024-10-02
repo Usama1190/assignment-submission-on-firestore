@@ -17,6 +17,14 @@ body {
 
 /* global classes starts */
 
+.color_dark {
+    color: #868686;
+}
+
+.ml_20 {
+    margin-left: -20px;
+}
+
 .b_bottom {
     border-bottom: 1px solid var(--color-text-1);
 }
@@ -30,7 +38,7 @@ body {
 }
 
 .border_red {
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 .mt_30 {
