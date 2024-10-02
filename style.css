@@ -3,6 +3,7 @@
     --color-2: #7AB2B2;
     --color-3: #EEF7FF;
     --color-border-4: #CDE8E5;
+    --color-dark: #202020;
 }
 
 body {
@@ -13,13 +14,22 @@ body {
 
 
 
+
 /* global classes starts */
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.width_40 {
+    width: 40%;
+}
 
 .border_red {
     border: 1px solid red;
 }
 
-.mt {
+.mt_30 {
     margin-top: 30px;
 }
 
@@ -43,12 +53,10 @@ body {
     justify-content: space-between;
 }
 
-
-
-
-.color_dark {
-    color: #202020;
+.j_around {
+    justify-content: space-around;
 }
+
 
 .input {
     padding: 13px;
@@ -78,6 +86,12 @@ body {
 }
 
 /* global classes end */
+
+
+
+
+
+
 
 
 
@@ -139,7 +153,7 @@ body {
 
 .btn {
     padding: 12px;
-    width: 100%;
+    /* width: 100%; */
     font-weight: 900;
     opacity: 0.7;
     cursor: pointer;

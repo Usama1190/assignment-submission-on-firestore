@@ -21,27 +21,39 @@
             <div class="nav_left_wrapper">
                 <div class="d_flex align_center">
                     <a href="#" class="logo_anchor"><img src="../assets/uilogo-removebg-preview.png" class="logo_image" alt="logo"></a>
-                    <span id="navigateDashboard" class="navlink navlink_active ml_5">Dashboard</span>
+                    <span id="navigate_dashboard" class="navlink navlink_active ml_5">Dashboard</span>
                 </div>
-                <span id="navigateAssignment" class="navlink">New assignment</span>
-                <span id="navigateAssignment" class="navlink">Class work</span>
-                <span id="navigateAssignment" class="navlink">My work</span>
+                <span id="navigate_newassignment" class="navlink">New assignment</span>
+                <span id="navigate_classassignment" class="navlink">Class work</span>
+                <span id="navigate_myassignment" class="navlink">My work</span>
             </div>
-            <span id="logout" class="dashboard_logout_btn">LogOut <i class="fa fa-sign-out"></i></span>
+            <div class="nav_right_wrapper d_flex j_between align_center">
+                <span class="theme_wrapper cursor_pointer"><i class="fa fa-sun-o"></i></span>
+                <span id="logout" class="dashboard_logout_btn">LogOut <i class="fa fa-sign-out"></i></span>
+            </div>
         </div>
 
-        <div id="dashboard_front_page">
+        <div id="dashboard_frontpage_wrapper" class="d_flex j_around align_center">
             <div class="content_wrapper">
                 <h1 class="dashboard_main_heading">Welcome to your Dashboard!</h1>
                 <h3 style="opacity: 0.7;">Developed By : <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" class="anchors">Usama Israr</a></h3>
+
+                <div class="mt_30">
+                    <button id="navigate_newassignment_btn" class="btn width_20 ml_5">Any Update</button>
+                    <button id="navigate_myassignment_btn" class="btn width_20 ml_5">View your work</button>
+                </div>
             </div>
 
             <div class="img_wrapper">
-                <img src="../assets/dashboardimage.gif" alt="Student with laptop" class="dashboard_front_page_img">
+                <img src="../assets/student-with-laptop5-removebg-preview.png" alt="Student with laptop" class="dashboard_front_page_img">
             </div>
         </div>
 
-        <div id="assignmentsDashboard">
+        <div id="newassignment_wrapper">
+            <h1 style="font-size: 50px; margin-top: 80px;">New Assignment</h1>
+        </div>
+
+        <div id="class_assignments_wrapper">
             <div id="assignment_form_wrapper">
                 <div class="assignmentForm borderColor">
                     <input type="text" id="student_name" placeholder="Enter your name" class="input mt" required><br><br>
@@ -72,11 +84,15 @@
                 </div>
             </div>
         </div>
+
+        <div id="myassignment_wrapper">
+            <h1 style="font-size: 50px; margin-top: 80px;">My Assignment</h1>
+        </div>
     </div>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src="../firebase.js"></script>
     <script type="module" src="dashboard.js"></script>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="header.js"></script>
 </body>
 </html>

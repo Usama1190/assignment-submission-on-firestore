@@ -1,3 +1,12 @@
+:root {
+    --color-text-1: #4D869C;
+    --color-2: #7AB2B2;
+    --color-3: #EEF7FF;
+    --color-border-4: #CDE8E5;
+    --color-dark: #202020;
+}
+
+
 /* Dashboard starts */
 
 /* .dashboard_wrapper {
@@ -6,10 +15,11 @@
 .navbar {
     position: sticky;
     top: 0;
-    background-color: var(--color-text-1);
+    background-color: var(--color-3);
     padding: 12px 20px;
     font-size: 14px;
     font-weight: 300;
+    /* color: var(--color-text-1); */
 }
 
 .nav_left_wrapper {
@@ -20,29 +30,40 @@
     /* border: 1px solid red; */
 }
 
+.nav_right_wrapper {
+    width: 20%;
+    /* border: 1px solid red; */
+}
+
+.theme_wrapper {
+    border-radius: 50%;
+    font-size: 16px;
+    padding: 6px;
+    color: var(--color-dark);
+    border: 1px solid var(--color-text-1);
+}
+
 .logo_image {
     width: 40px;
     height: 40px;
     padding: 0;
     border-radius: 50%;
-    border: 1px solid var(--color-border-4);
+    border: 1px solid var(--color-text-1);
 }
 
 
-#dashboard_front_page {
+#dashboard_frontpage_wrapper {
     width: 100%;
     margin-top: 100px;
-    /* height: 99vh; */
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: space-around;
-    /* border: 1px solid black; */
+    justify-content: space-around; */
 }
 
 .content_wrapper {
-    width: 30rem;
+    width: 45%;
     height: 20rem;
-    /* border: 1px solid black; */
+    border: 1px solid yellow;
 }
 
 .dashboard_main_heading {
@@ -53,15 +74,14 @@
 }
 
 .dashboard_front_page_img {
-    width: 25rem;
-    height: 25rem;
-    border-radius: 25%;
+    width: 95%;
+    border: 1px solid red;
 }
 
 
 .navlink {
     cursor: pointer;
-    color: var(--color-3);
+    color: var(--color-dark);
     position: relative;
 }
 
