@@ -2,7 +2,7 @@ const dashboard_wrapper = {
     dashboard_frontpage_wrapper: document.getElementById('dashboard_frontpage_wrapper'),
     class_assignments_wrapper: document.getElementById('class_assignments_wrapper'),
     myassignment_wrapper: document.getElementById('myassignment_wrapper'),
-    newassignment_wrapper: document.getElementById('newassignment_wrapper')
+    newassignment_wrapper: document.getElementById('newassignment_wrapper'),
 }
 
 const dashboard_header = {
@@ -12,8 +12,11 @@ const dashboard_header = {
     navigate_myassignment: document.getElementById('navigate_myassignment'),
     navigate_newassignment_btn: document.getElementById('navigate_newassignment_btn'),
     navigate_myassignment_btn: document.getElementById('navigate_myassignment_btn'),
-    profile_btn: document.getElementById('profile_btn')
+    profile_btn: document.getElementById('profile_btn'),
+    theme_btn: document.getElementById('theme_btn'),
 }
+
+let theme_sun = true;
 
 dashboard_wrapper.newassignment_wrapper.style.display = 'none';
 dashboard_wrapper.myassignment_wrapper.style.display = 'none';
@@ -22,6 +25,13 @@ dashboard_wrapper.class_assignments_wrapper.style.display = 'none';
 
 
 // ============================ Functionalities ============================
+
+dashboard_header.theme_btn.addEventListener('click', () => {
+    theme_sun === true ? theme_sun = false: theme_sun = true;
+    theme_sun == false ? dashboard_header.theme_btn.classList.remove('fa-sun-o') : dashboard_header.theme_btn.classList.add('fa-sun-o');
+    theme_sun == true ? dashboard_header.theme_btn.classList.remove('fa-moon-o') : dashboard_header.theme_btn.classList.add('fa-moon-o');
+});
+
 
 
 dashboard_header.navigate_classassignment.addEventListener('click', function() {
