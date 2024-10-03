@@ -5,6 +5,7 @@ const dashboard_wrapper = {
     newassignment_wrapper: document.getElementById('newassignment_wrapper'),
 }
 
+
 const dashboard_header = {
     navigate_dashboard: document.getElementById('navigate_dashboard'),
     navigate_classassignment: document.getElementById('navigate_classassignment'),

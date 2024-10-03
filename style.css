@@ -99,6 +99,10 @@ body {
     margin-left: 5px;
 }
 
+.mt_60 {
+    margin-top: 60px;
+}
+
 
 
 
@@ -150,6 +154,24 @@ body {
 
 .ruler {
     width: 35%;
+}
+
+.btn2 {
+    margin-left: 10px;
+    padding: 12px;
+    cursor: pointer;
+    border: 1px solid var(--color-border-4);
+    border-radius: 4px;
+    background-color: var(--color-3);
+    color: var(--color-text-1);
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn2:hover {
+    box-shadow: none;
+    color: var(--color-3);
+    background-color: var(--color-text-1);
 }
 
 /* global classes end */
