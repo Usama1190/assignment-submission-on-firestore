@@ -278,7 +278,7 @@ body {
 }
 
 
-#loginWithGoogle {
+#loginWithGoogle, #signupWithGoogle {
     padding: 10px;
     border-radius: 6px;
     cursor: pointer;
