@@ -187,7 +187,7 @@
 
 #assignment_form_wrapper {
     width: 100%;
-    height: 99vh;
+    /* height: 99vh; */
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
@@ -199,6 +199,7 @@
     border-radius: 4px;
     width: 400px;
     height: 250px;
+    padding: 12px;
 }
 
 

@@ -134,15 +134,18 @@ onAuthStateChanged(auth, (user) => {
 const addAssignment = async() => {
     if(assignment.student_name.value !== '' && assignment.assignment_link !== '') {
         warning.innerText = '';
-        try {
-            // loader.style.display = 'block';
-            
+        assignment_btns.assignment_submit_btn.innerText = 'Loading...';
+        assignment_btns.assignment_update_btn.innerText = 'Loading...';
+        try {            
             const docRef = await addDoc(collection(db, "assignments"), {
               student_name: assignment.student_name.value,
               assignment_link: assignment.assignment_link.value,
               date: date,
             });
-            console.log("Document written with ID: ", docRef.id);
+            // console.log("Document written with ID: ", docRef.id);
+            assignment_btns.assignment_submit_btn.innerText = 'Submit';
+            assignment_btns.assignment_update_btn.innerText = 'Save changes';
+
             getAssignments();
 
         } catch (e) {
@@ -152,6 +155,8 @@ const addAssignment = async() => {
         finally {
             assignment.assignment_form_wrapper.style.display = 'none';
             assignment.assignmentList.style.display = 'flex';
+            assignment_btns.assignment_submit_btn.innerText = 'Submit';
+            assignment_btns.assignment_update_btn.innerText = 'Save changes';
 
             assignment.student_name.value = '';
             assignment.assignment_link.value = '';

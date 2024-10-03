@@ -1,7 +1,7 @@
 import { auth, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from "../firebase.js";
 
 let formField = document.querySelectorAll('form input');
-const [ userName, userEmail, userPassword ] = formField;
+const [ userEmail, userPassword ] = formField;
 
 
 const wrapper = {
@@ -33,7 +33,7 @@ const signUp = () => {
     loader_wrapper.style.zIndex = '1';
     form.style.opacity = '0.3'; 
     
-    if(userName.value !== '' && userPassword.value === confirmPasswrod.value) {
+    if(userPassword.value === confirmPasswrod.value) {
         createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
         .then((userCredential) => {
             loader.style.display = 'none';
@@ -71,7 +71,7 @@ const signUp = () => {
         });
     }
     else {
-        warning.innerText = "input fields is not valid!";
+        warning.innerText = "Confirm password doesn't matched!";
         loader.style.display = 'none';
         loader_wrapper.style.zIndex = '-1';
         form.style.opacity = '1';

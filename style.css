@@ -246,16 +246,17 @@ body {
     opacity: 0.7;
     border-radius: 6px;
     color: var(--color-3);
-    background-color: var(--color-text-1);
     border: 1px solid var(--color-border-4);
     transition: all 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--color-text-1);
 }
 
 .btn:hover {
     background-color: var(--color-3);
+    box-shadow: none;
     border: 1px solid var(--color-text-1);
     color: var(--color-text-1);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .warning {
