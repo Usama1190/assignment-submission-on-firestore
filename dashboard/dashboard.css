@@ -172,7 +172,9 @@
     opacity: 0.5;
 }
 
-
+.developby {
+    color: #7c7979;
+}
 
 
 
@@ -227,14 +229,14 @@
 }
 
 .header_content_heading {
-    color: #202020;
+    color: var(--color-text-1);
     font-size: 35px;
     font-weight: 400;
 }
 
 .data_wrapper {
     margin-top: 30px;
-    width: 75%;
+    width: 100%;
     /* border: 1px solid purple; */
 }
 
@@ -308,6 +310,7 @@
     border: 1px solid var(--color-border-4);
     border-radius: 10px;
     color: var(--color-text-1);
+    transition: all 0.3s;
 }
 
 .myassignment_content_wrapper:hover {
