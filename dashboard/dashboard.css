@@ -232,6 +232,7 @@
 .header_content_heading {
     color: #202020;
     font-size: 35px;
+    font-weight: 400;
 }
 
 .data_wrapper {
@@ -299,6 +300,21 @@
     width: 80%;
     padding: 20px;
     border-radius: 2px;
+}
+
+#newassignment_wrapper, #myassignment_wrapper {
+    padding: 40px;
+}
+
+.myassignment_content_wrapper {
+    padding: 6px;
+    border: 1px solid var(--color-border-4);
+    border-radius: 10px;
+    color: var(--color-2);
+}
+
+.myassignment_content_wrapper:hover {
+    background-color: var(--color-3);
 }
 
 
