@@ -10,9 +10,6 @@
 
 /* Dashboard starts */
 
-/* .dashboard_wrapper {
-} */
-
 .navbar {
     position: sticky;
     top: 0;
@@ -238,7 +235,7 @@
 .data_wrapper {
     margin-top: 30px;
     width: 75%;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
 #showData {
@@ -310,7 +307,7 @@
     padding: 6px;
     border: 1px solid var(--color-border-4);
     border-radius: 10px;
-    color: var(--color-2);
+    color: var(--color-text-1);
 }
 
 .myassignment_content_wrapper:hover {

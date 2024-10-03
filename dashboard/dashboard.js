@@ -189,11 +189,6 @@ const getAssignments = async() => {
                         <span class="fa fa-user-o"></span> <strong>${student_name}</strong> <small>${date}</small><br /><br />
                     </div>
                     <div>
-                    <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
                         <span class='fa fa-edit change' title='edit' 
                         onclick='editData("${doc.id}", this)'></span> <span 
                         class='fa fa-trash change' title='delete' 

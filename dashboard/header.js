@@ -3,6 +3,7 @@ const dashboard_wrapper = {
     class_assignments_wrapper: document.getElementById('class_assignments_wrapper'),
     myassignment_wrapper: document.getElementById('myassignment_wrapper'),
     newassignment_wrapper: document.getElementById('newassignment_wrapper'),
+    dashboard_wrapper: document.getElementById('dashboard_wrapper')
 }
 
 
@@ -28,9 +29,22 @@ dashboard_wrapper.class_assignments_wrapper.style.display = 'none';
 // ============================ Functionalities ============================
 
 dashboard_header.theme_btn.addEventListener('click', () => {
-    theme_sun === true ? theme_sun = false: theme_sun = true;
-    theme_sun == false ? dashboard_header.theme_btn.classList.remove('fa-sun-o') : dashboard_header.theme_btn.classList.add('fa-sun-o');
-    theme_sun == true ? dashboard_header.theme_btn.classList.remove('fa-moon-o') : dashboard_header.theme_btn.classList.add('fa-moon-o');
+    // theme_sun === true ? theme_sun = false: theme_sun = true;
+    // theme_sun == false ? dashboard_header.theme_btn.classList.remove('fa-sun-o') : dashboard_header.theme_btn.classList.add('fa-sun-o');
+    // theme_sun == true ? dashboard_header.theme_btn.classList.remove('fa-moon-o') : dashboard_header.theme_btn.classList.add('fa-moon-o');
+
+    if(theme_sun === true) {
+        theme_sun = false;
+        dashboard_header.theme_btn.classList.remove('fa-moon-o');
+        dashboard_header.theme_btn.classList.add('fa-sun-o');
+        dashboard_wrapper.dashboard_wrapper.style.backgroundColor = '#021526';
+    }
+    else if(theme_sun === false) {
+        theme_sun = true;
+        dashboard_header.theme_btn.classList.remove('fa-sun-o');
+        dashboard_header.theme_btn.classList.add('fa-moon-o');
+        dashboard_wrapper.dashboard_wrapper.style.backgroundColor = '#ffffff';
+    }
 });
 
 
