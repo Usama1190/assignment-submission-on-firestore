@@ -4,6 +4,8 @@ const dashboard_wrapper = {
     myassignment_wrapper: document.getElementById('myassignment_wrapper'),
     newassignment_wrapper: document.getElementById('newassignment_wrapper'),
     dashboard_wrapper: document.getElementById('dashboard_wrapper'),
+    nav_left_wrapper: document.getElementById('nav_left_wrapper'),
+    nav_right_wrapper: document.getElementById('nav_right_wrapper')
 }
 
 
@@ -16,6 +18,7 @@ const dashboard_header = {
     navigate_myassignment_btn: document.getElementById('navigate_myassignment_btn'),
     profile_btn: document.getElementById('profile_btn'),
     theme_btn: document.getElementById('theme_btn'),
+    bar_btn: document.getElementById('bar_btn')
 }
 
 let theme_sun = true;
@@ -117,6 +120,10 @@ const navigate_newassignment_func = () => {
     dashboard_header.navigate_myassignment.classList.remove('b_bottom');
     dashboard_header.navigate_newassignment.classList.add('b_bottom');
 }
+
+dashboard_header.bar_btn.addEventListener('click', () => {
+    // dashboard_wrapper.nav_left_wrapper.style.display = 'flex';
+})
 
 
 dashboard_header.navigate_myassignment.addEventListener('click', navigate_myassignment_func);

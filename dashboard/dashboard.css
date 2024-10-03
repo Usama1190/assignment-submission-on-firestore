@@ -32,6 +32,7 @@
 
 .nav_search_bar_wrapper {
     width: 25%;
+    border: 1px solid red;
 }
 
 .nav_search_bar {
@@ -292,7 +293,13 @@
     background-color: var(--color-3);
 }
 
-
+#bar_btn {
+    border: 1px solid var(--color-border-4);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
 
 
 /* Dashboard ends */
@@ -304,9 +311,77 @@
 
 /* responsiveness starts */
 
-@media (max-width: 730px) {
+@media (max-width: 867px) {
+    .dashboard_wrapper {
+        width: 100%;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .nav_left_wrapper {
+        display: none;
+        width: 100%;
+        border: 1px solid red;
+    }
+
     .nav_right_wrapper {
-        width: 25%;
+        /* display: none; */
+    }
+
+    #bar_btn {
+        display: block;
+    }
+}
+
+
+@media (max-width: 782px) {
+    .navbar {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav_left_wrapper {
+        display: none;
+        width: 100%;
+        border: 1px solid red;
+    }
+
+    .nav_search_bar_wrapper {
+        width: 40%;
+    }
+
+    .nav_right_wrapper {
+        display: none;
+    }
+
+    #bar_btn {
+        display: block;
+    }
+
+    .dashboard_frontpage_wrapper {
+        display: block;
+    }
+
+    .content_wrapper {
+        width: 100%;
+    }
+
+    .img_wrapper {
+        width: 100%;
+    }
+
+    #newassignment_wrapper {
+        width: 100%;
+    }
+
+    #class_assignments_wrapper {
+        width: 100%;
+    }
+
+    #myassignment_wrapper {
+        width: 100%;
     }
 }
 

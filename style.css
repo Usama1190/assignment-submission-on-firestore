@@ -389,16 +389,18 @@ body {
 
 
 
-@media (max-width: 430px) {
-    body {
+@media (max-width: 520px) {
+    .container_wrapper {
         display: block;
     }
 
     .form_container {
         width: 100%;
+        height: 625px;
     }
 
     .side_div {
         width: 100%;
+        height: 625px;
     }
 }
