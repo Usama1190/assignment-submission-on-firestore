@@ -18,7 +18,8 @@ const assignment_btns = {
     addAssignment_btn: document.getElementById('addAssignment_btn'),
     assignment_submit_btn: document.getElementById('assignment_submit_btn'),
     assignment_update_btn: document.getElementById('assignment_update_btn'),
-    user_icon_btn: document.getElementById('user_icon_btn')
+    user_icon_btn: document.getElementById('user_icon_btn'),
+    close_form_btn: document.getElementById('close_form_btn')
 }
 
 assignment_btns.assignment_update_btn.style.display = 'none';
@@ -220,6 +221,11 @@ const getAssignments = async() => {
     }
 
 }
+
+assignment_btns.close_form_btn.addEventListener('click', () => {
+    assignment.assignment_form_wrapper.style.display = 'none';
+    assignment.assignmentList.style.display = 'flex';
+})
 
 getAssignments();
 

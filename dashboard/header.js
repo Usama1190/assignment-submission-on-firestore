@@ -3,7 +3,7 @@ const dashboard_wrapper = {
     class_assignments_wrapper: document.getElementById('class_assignments_wrapper'),
     myassignment_wrapper: document.getElementById('myassignment_wrapper'),
     newassignment_wrapper: document.getElementById('newassignment_wrapper'),
-    dashboard_wrapper: document.getElementById('dashboard_wrapper')
+    dashboard_wrapper: document.getElementById('dashboard_wrapper'),
 }
 
 
@@ -117,7 +117,6 @@ const navigate_newassignment_func = () => {
     dashboard_header.navigate_myassignment.classList.remove('b_bottom');
     dashboard_header.navigate_newassignment.classList.add('b_bottom');
 }
-
 
 
 dashboard_header.navigate_myassignment.addEventListener('click', navigate_myassignment_func);
