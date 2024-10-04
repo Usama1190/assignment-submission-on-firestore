@@ -121,9 +121,9 @@ const navigate_newassignment_func = () => {
     dashboard_header.navigate_newassignment.classList.add('b_bottom');
 }
 
-dashboard_header.bar_btn.addEventListener('click', () => {
+// dashboard_header.bar_btn.addEventListener('click', () => {
     // dashboard_wrapper.nav_left_wrapper.style.display = 'flex';
-})
+// })
 
 
 dashboard_header.navigate_myassignment.addEventListener('click', navigate_myassignment_func);

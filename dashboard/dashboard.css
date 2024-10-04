@@ -32,7 +32,7 @@
 
 .nav_search_bar_wrapper {
     width: 25%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .nav_search_bar {
@@ -345,7 +345,7 @@
     .nav_left_wrapper {
         display: none;
         width: 100%;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .nav_search_bar_wrapper {
